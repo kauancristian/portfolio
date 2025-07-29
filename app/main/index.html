@@ -1,0 +1,323 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="shortcut icon" href="assets/logoPort.png" type="image/x-icon">
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+    <title>Kauan Cristian | Front-End Developer</title>
+
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Assistant:wght@200..800&family=Bangers&family=Bebas+Neue&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lilita+One&family=Love+Ya+Like+A+Sister&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Passion+One:wght@400;700;900&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap');
+
+        *{
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        p, span, h1, h2 {
+            font-family: "Montserrat", sans-serif;
+        }
+
+        .grotesk{
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        .nav-bar{
+            position: relative;
+            display: inline-flex;
+        }
+
+        .nav-bar::after{
+           content: '';
+           position: absolute;
+           left: 0;
+           bottom: -4px;
+           width: 0;
+           height: 2px;
+           background-origin: left;
+           background-image: linear-gradient(#94032F ,#CF0000 , #AE0000);
+           transition: width 0.5s;
+        }
+
+        .nav-bar:hover::after{
+            width: 100%;
+        }
+
+        body{
+            background: url(assets/fundo-de-papel-texturizado-liso-preto.jpg) no-repeat;
+            background-position: center;
+            background-size: cover;
+        }
+
+        @keyframes animationImage {
+            0%{
+                transform: translateY(4px);
+            }
+
+            50%{
+                transform: translateY(-4px);
+            }
+
+            100%{
+                transform: translateY(4px);
+            }
+        }
+
+        #myImage{
+            animation: animationImage 1.9s ease-in-out infinite;
+        }
+
+        @keyframes slowSurge {
+            0%{
+                opacity: 0;
+                transform: translateY(20px);
+            }
+
+            100%{
+                opacity: 1;
+                transform: translateY(0px);
+            }
+        }
+
+        #infs-sec1{
+            animation: slowSurge 1s ease-in-out;
+        }
+
+        #btnBrowse{
+            position: relative;
+            overflow: hidden;
+        }
+
+        #btnBrowse::before{
+            content: '';
+            position: absolute;
+            height: 100%;
+            width: 75%;
+            top: 0;
+            left: -100%;
+            background-image: linear-gradient(120deg, transparent, #ffffff58, transparent);
+            transition: left 0.3s ease-in-out;
+        }
+
+        #btnBrowse:hover::before{
+            left: 100%;
+        }
+    </style>
+</head>
+<body>
+    <!-- Sec 1 - Home -->
+    <div id="sec1" class="min-h-screen">
+        <header class="h-[70px] border-b border-[#262626] flex lg:justify-between items-center bg-black/90 fixed w-screen z-[9999] top-0">
+            <div class="lg:ml-9">
+                <div class="absolute flex space-x-2 items-center translate-y-[-30px]">
+                    <img class="w-16" src="assets/logoPort.png" alt="">
+                    <p id="p1" class="text-white font-bold text-xl">Kauan Cristian</p>
+                </div>
+            </div>
+            <nav class="">
+                <ul class="flex flex-col lg:flex-row lg:justify-end lg:space-x-5 text-gray-400 items-center">
+                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">Home</li>
+                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">About</li>
+                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">Skills</li>
+                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">Projects</li>
+                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">Certificates</li>
+                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">Contact</li>
+                    <li class="cursor-pointer transition ease-in-out hover:scale-105 duration-300 group"><button class="border rounded-full border-gray-400 p-1 group-hover:bg-gray-500/20"><img class="w-7" src="assets/sun.png" alt=""></button></li>
+                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500"><button></button></li>
+                </ul>
+            </nav>
+        </header>
+        <div id="infs-sec1" class="lg:grid lg:grid-cols-2">
+            <!-- Texto PC-->
+            <div class="hidden lg:block">
+                <div class="text-white lg:h-screen flex justify-center items-center">
+                    <div class="transform translate-y-[-10px]">
+                        <div>
+                            <div class="font-semibold">
+                                <p class="lg:text-2xl">Hello Word, I'm</p>
+                                <p class="lg:text-6xl bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent">Kauan Cristian</p>
+                            </div>
+                            <p id="typing" class="w-[500px] text-gray-300 pt-5">Front-End Developer specialized in UI/UX. I turn ideas into intuitive interfaces and memorable experiences, always focused on delivering the best for the user.</p>
+                            <div class="flex flex-col lg:flex-row lg:space-x-3">
+                                <button id="btnBrowse" class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-3 rounded-lg mt-9 transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group">
+                                    <p>Browse my work</p>
+                                    <i class="bi bi-arrow-right group-hover:translate-x-2 transition ease-in-out duration-300"></i>
+                                </button>
+                                <button id="btnBrowse" class="text-white bg-transparent border border-[#AE0000] py-3 rounded-lg mt-9 transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:bg-[#AE0000]/20 hover:translate-y-[-5px] ease-in-out duration-150">
+                                    <p>Let's talk?</p>
+                                    <i class="bi bi-chat-dots transition ease-in-out duration-300"></i>
+                                </button>
+                            </div>
+
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Foto -->
+            <div class="text-white text-center lg:h-screen flex justify-center lg:items-center mt-40 lg:mt-0">
+                <div class="lg:translate-y-[-10px]">
+                    <div id="myImage" class="bg-gradient-to-r from-[#F70000] via-[#CF0000] to-[#AE0000] p-[5px] rounded-full w-fit drop-shadow-[0_0_20px_red]">
+                        <img class="object-cover rounded-full w-64 h-64 bg-[#262626] p-2" src="assets/eu.png" alt="">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Texto Mobile -->
+            <div class="lg:hidden block">
+                <div class="text-white lg:h-screen flex justify-center items-center">
+                    <div class="text-center pt-7">
+                        <div>
+                            <div class="font-semibold">
+                                <p class="lg:text-2xl">Hello Word, I'm</p>
+                                <p class="lg:text-6xl bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent">Kauan Cristian</p>
+                            </div>
+                            <p id="typing" class="px-5 text-gray-300 pt-5">Front-End Developer specialized in UI/UX. I turn ideas into intuitive interfaces and memorable experiences, always focused on delivering the best for the user.</p>
+                            <button id="btnBrowse" class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-3 rounded-md mt-9 transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group mx-auto">
+                                <p>Browse my work</p>
+                                <i class="bi bi-arrow-right group-hover:translate-x-2 transition ease-in-out duration-300"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sec 2 - Sobre mim -->
+     <div class="pt-40 lg:pt-0 pb-10">
+        <div>
+            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">About Me</p>
+            <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[180px] h-0.5 mx-auto mt-3"></span>
+            <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">Learn a little more about me, my acquired knowledge, my journey, and my goals. And, of course, my love for web development.</p>
+        </div>
+
+        <div class="pt-16">
+            <div class="grid lg:grid-cols-3 gap-20 lg:gap-10 px-10">
+                <div class="mx-auto bg-[#121212]/80 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002]">
+                    <div class="flex items-center space-x-2">
+                        <i class="bi bi-person-circle text-[#C20000]"></i>
+                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">Who am I?</p>
+                    </div>
+
+                    <div class="text-gray-200 pt-5 text-sm">
+                        <p>I'm Kauan Cristian, a passionate and confident Front-End Developer. I love learning, solving problems, and creating interactive, user-friendly web experiences. My goal is to turn ideas into smooth, modern, and meaningful interfaces.</p>
+                    </div>
+                </div>
+
+                <div class="mx-auto bg-[#121212]/80 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002]">
+                    <div class="flex items-center space-x-2">
+                        <i class="bi bi-rocket-takeoff text-[#C20000]"></i>
+                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">My goal</p>
+                    </div>
+
+                    <div class="text-gray-200 pt-5 text-sm">
+                          <p>My goal is to be the best at what I do, creating user interfaces and digital solutions that offer the best experience. I strive to improve daily, learning and staying updated with the latest technologies. I deliver not just software, but intuitive, efficient, and modern experiences, always staying at the forefront of Front-End development.</p>
+                    </div>
+                </div>
+                
+                <div class="mx-auto bg-[#121212]/80 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002]">
+                    <div class="flex items-center space-x-2">
+                        <i class="bi bi-chat-heart-fill text-[#C20000]"></i>
+                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">What do I follow</p>
+                    </div>
+
+                    <div class="text-gray-200 pt-5 text-sm">
+                        <p>Being a developer goes beyond writing code. It requires vision, understanding of design and user experience, teamwork, and above all, passion. Loving what you do is what turns projects into great experiences. I’m always learning and striving to give my best — coding is not just a job for me, it’s a purpose.</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sec 3 - Skills -->
+            <div class="pt-12 lg:pt-32 px-10">
+                <div class="mx-auto">
+                    <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">My Skills</p>
+                    <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[180px] h-0.5 mx-auto mt-3"></span>
+
+                    <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">These are the main technologies and tools I use to build modern, responsive, and functional interfaces.</p>
+
+                    <div class="pt-16">
+                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-9">
+                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
+                                <img class="w-24" src="assets/stacks/html.png" alt="">
+                                <p class="text-white font-semibold translate-y-[-23px]">HTML 5</p>
+                            </div>
+
+                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
+                                <img class="w-20" src="assets/stacks/css.png" alt="">
+                                <p class="text-white font-semibold translate-y-1">CSS 3</p>
+                            </div>
+
+                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
+                                <img class="w-32" src="assets/stacks/js.png" alt="">
+                                <p class="text-white font-semibold translate-y-[1px]">JavaScript</p>
+                            </div>
+
+                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
+                                <img class="w-32" src="assets/stacks/java.png" alt="">
+                                <p class="text-white font-semibold translate-y-[-20px]">Java</p>
+                            </div>
+
+                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
+                                <img class="w-24" src="assets/stacks/react.png" alt="">
+                                <p class="text-white font-semibold translate-y-[-10px]">React</p>
+                            </div>
+
+                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
+                                <img class="w-24" src="assets/stacks/tailwind.png" alt="">
+                                <p class="text-white font-semibold translate-y-[-18px]">TailwindCss</p>
+                            </div>
+
+                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
+                                <img class="w-24" src="assets/stacks/sass.png" alt="">
+                                <p class="text-white font-semibold translate-y-[-10px]">Sass</p>
+                            </div>
+
+                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
+                                <img class="w-24" src="assets/stacks/figma.png" alt="">
+                                <p class="text-white font-semibold translate-y-[-10px]">Figma</p>
+                            </div>
+
+                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
+                                <img class="w-24" src="assets/stacks/canva.png" alt="">
+                                <p class="text-white font-semibold translate-y-[1px]">Canva</p>
+                            </div>
+
+                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
+                                <img class="w-24" src="assets/stacks/github.png" alt="">
+                                <p class="text-white font-semibold translate-y-1">GitHub</p>
+                            </div>
+
+                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
+                                <img class="w-20" src="assets/stacks/git.png" alt="">
+                                <p class="text-white font-semibold translate-y-3">Git</p>
+                            </div>
+
+                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
+                                <img class="w-24" src="assets/stacks/node.png" alt="">
+                                <p class="text-white font-semibold translate-y-[1px]">Node</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </div>
+
+
+     <!-- Sec 6 - Contato -->
+     <div class="pt-40 lg:pt-24 pb-10">
+        <div>
+            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Contact</p>
+            <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[180px] h-0.5 mx-auto mt-3"></span>
+
+            <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">These are the ways you can reach out to me for services, collaborations, or any inquiries. Feel free to get in touch — I'm always open to new opportunities!</p>
+
+        </div>
+     </div>
+</body>
+</html>
