@@ -11,18 +11,24 @@
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Assistant:wght@200..800&family=Bangers&family=Bebas+Neue&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lilita+One&family=Love+Ya+Like+A+Sister&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Passion+One:wght@400;700;900&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap');
 
+        @import url('https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Assistant:wght@200..800&family=Bangers&family=Bebas+Neue&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lilita+One&family=Love+Ya+Like+A+Sister&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Passion+One:wght@400;700;900&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&display=swap');
+
         *{
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        p, span, h1, h2 {
+        html{
+            scroll-behavior: smooth;
+        }
+
+        p, h1, h2 {
             font-family: "Montserrat", sans-serif;
         }
 
-        .grotesk{
-            font-family: "Space Grotesk", sans-serif;
+        .code {
+            font-family: "Source Code Pro", monospace;
         }
 
         .nav-bar{
@@ -47,7 +53,7 @@
         }
 
         body{
-            background: url(assets/fundo-de-papel-texturizado-liso-preto.jpg) no-repeat;
+            background: url(assets/formas-ou-textura-de-fundo-geometrico-abstrato.jpg);
             background-position: center;
             background-size: cover;
         }
@@ -86,12 +92,12 @@
             animation: slowSurge 1s ease-in-out;
         }
 
-        #btnBrowse{
+        .btnBrowse{
             position: relative;
             overflow: hidden;
         }
 
-        #btnBrowse::before{
+        .btnBrowse::before{
             content: '';
             position: absolute;
             height: 100%;
@@ -102,9 +108,10 @@
             transition: left 0.3s ease-in-out;
         }
 
-        #btnBrowse:hover::before{
+        .btnBrowse:hover::before{
             left: 100%;
         }
+        
     </style>
 </head>
 <body>
@@ -119,12 +126,12 @@
             </div>
             <nav class="">
                 <ul class="flex flex-col lg:flex-row lg:justify-end lg:space-x-5 text-gray-400 items-center">
-                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">Home</li>
-                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">About</li>
-                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">Skills</li>
+                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500"><a href="#sec1">Home</a></li>
+                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500"><a href="#sec2">About</a></li>
+                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500"><a href="#sec3">Skills</a></li>
                     <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">Projects</li>
                     <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">Certificates</li>
-                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">Contact</li>
+                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500"><a href="#contato">Contact</a></li>
                     <li class="cursor-pointer transition ease-in-out hover:scale-105 duration-300 group"><button class="border rounded-full border-gray-400 p-1 group-hover:bg-gray-500/20"><img class="w-7" src="assets/sun.png" alt=""></button></li>
                     <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500"><button></button></li>
                 </ul>
@@ -142,17 +149,28 @@
                             </div>
                             <p id="typing" class="w-[500px] text-gray-300 pt-5">Front-End Developer specialized in UI/UX. I turn ideas into intuitive interfaces and memorable experiences, always focused on delivering the best for the user.</p>
                             <div class="flex flex-col lg:flex-row lg:space-x-3">
-                                <button id="btnBrowse" class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-3 rounded-lg mt-9 transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group">
+                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-3 rounded-lg mt-9 transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse">
                                     <p>Browse my work</p>
                                     <i class="bi bi-arrow-right group-hover:translate-x-2 transition ease-in-out duration-300"></i>
                                 </button>
-                                <button id="btnBrowse" class="text-white bg-transparent border border-[#AE0000] py-3 rounded-lg mt-9 transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:bg-[#AE0000]/20 hover:translate-y-[-5px] ease-in-out duration-150">
-                                    <p>Let's talk?</p>
-                                    <i class="bi bi-chat-dots transition ease-in-out duration-300"></i>
-                                </button>
+                                <a href="#contato">
+                                    <button class="text-white bg-transparent border border-[#AE0000] py-3 rounded-lg mt-9 transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:bg-[#AE0000]/20 hover:translate-y-[-5px] ease-in-out duration-150 btnBrowse">
+                                        <p>Let's talk?</p>
+                                        <i class="bi bi-chat-dots transition ease-in-out duration-300"></i>
+                                    </button>
+                                </a>
                             </div>
 
-                            
+                            <div id="icoLinks" class="mt-9 relative z-10">
+                                <div class="space-x-3">
+                                    <button class="transform hover:translate-y-[-4px] transition ease-in-out duration-500">
+                                        <i class="bi bi-github text-[#AE0000] border border-[#AE0000] py-3 px-[15px] rounded-full cursor-pointer hover:bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] hover:text-white ease-in-out duration-300"></i>
+                                    </button>
+                                    <button class="transform hover:translate-y-[-4px] transition ease-in-out duration-500">
+                                         <i class="bi bi-instagram text-[#AE0000] border border-[#AE0000] py-3 px-[15px] rounded-full cursor-pointer hover:bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] hover:text-white ease-in-out duration-300"></i>
+                                    </button>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -189,16 +207,18 @@
     </div>
 
     <!-- Sec 2 - Sobre mim -->
-     <div class="pt-40 lg:pt-0 pb-10">
+     <div id="sec2" class="pt-40 lg:pt-0 pb-10">
         <div>
-            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">About Me</p>
-            <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[180px] h-0.5 mx-auto mt-3"></span>
-            <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">Learn a little more about me, my acquired knowledge, my journey, and my goals. And, of course, my love for web development.</p>
+            <div id="aboutMe">
+                <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">About Me</p>
+                <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[180px] h-0.5 mx-auto mt-3"></span>
+            </div>
+            <p id="textAbout" class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">Learn a little more about me, my acquired knowledge, my journey, and my goals. And, of course, my love for web development.</p>
         </div>
 
         <div class="pt-16">
-            <div class="grid lg:grid-cols-3 gap-20 lg:gap-10 px-10">
-                <div class="mx-auto bg-[#121212]/80 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002]">
+            <div id="boxsAbout" class="grid lg:grid-cols-3 gap-20 lg:gap-10 px-10">
+                <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#AE0000]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002] ">
                     <div class="flex items-center space-x-2">
                         <i class="bi bi-person-circle text-[#C20000]"></i>
                         <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">Who am I?</p>
@@ -209,7 +229,7 @@
                     </div>
                 </div>
 
-                <div class="mx-auto bg-[#121212]/80 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002]">
+                <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#AE0000]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002]">
                     <div class="flex items-center space-x-2">
                         <i class="bi bi-rocket-takeoff text-[#C20000]"></i>
                         <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">My goal</p>
@@ -220,7 +240,7 @@
                     </div>
                 </div>
                 
-                <div class="mx-auto bg-[#121212]/80 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002]">
+                <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#AE0000]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002]">
                     <div class="flex items-center space-x-2">
                         <i class="bi bi-chat-heart-fill text-[#C20000]"></i>
                         <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">What do I follow</p>
@@ -233,73 +253,134 @@
             </div>
 
             <!-- Sec 3 - Skills -->
-            <div class="pt-12 lg:pt-32 px-10">
+            <div id="sec3" class="pt-12 lg:pt-32 px-10">
                 <div class="mx-auto">
                     <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">My Skills</p>
                     <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[180px] h-0.5 mx-auto mt-3"></span>
 
                     <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">These are the main technologies and tools I use to build modern, responsive, and functional interfaces.</p>
 
-                    <div class="pt-16">
-                        <div class="grid grid-cols-2 lg:grid-cols-4 gap-9">
-                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
-                                <img class="w-24" src="assets/stacks/html.png" alt="">
-                                <p class="text-white font-semibold translate-y-[-23px]">HTML 5</p>
+                    <div id="skillsBox" class="pt-16">
+                        <div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-9">
+
+                            <!-- Skill 1 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d]">
+                                    <div class="flex flex-col justify-center items-center translate-y-[-10px]">
+                                        <img class="w-28" src="assets/stacks/html.png" alt="">
+                                        <p class="text-white font-semibold translate-y-[-6px]">HTML 5</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
-                                <img class="w-20" src="assets/stacks/css.png" alt="">
-                                <p class="text-white font-semibold translate-y-1">CSS 3</p>
+                            <!-- Skill 2 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-20" src="assets/stacks/css.png" alt="">
+                                        <p class="text-white font-semibold translate-y-1">CSS 3</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
-                                <img class="w-32" src="assets/stacks/js.png" alt="">
-                                <p class="text-white font-semibold translate-y-[1px]">JavaScript</p>
+                             <!-- Skill 3 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-32" src="assets/stacks/js.png" alt="">
+                                        <p class="text-white font-semibold translate-y-1">JavaScript</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
-                                <img class="w-32" src="assets/stacks/java.png" alt="">
-                                <p class="text-white font-semibold translate-y-[-20px]">Java</p>
+                             <!-- Skill 4 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-32" src="assets/stacks/java.png" alt="">
+                                        <p class="text-white font-semibold translate-y-[-23px]">Java</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
-                                <img class="w-24" src="assets/stacks/react.png" alt="">
-                                <p class="text-white font-semibold translate-y-[-10px]">React</p>
+                             <!-- Skill 5 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/react.png" alt="">
+                                        <p class="text-white font-semibold translate-y-[-10px]">React</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
-                                <img class="w-24" src="assets/stacks/tailwind.png" alt="">
-                                <p class="text-white font-semibold translate-y-[-18px]">TailwindCss</p>
+                             <!-- Skill 6 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/tailwind.png" alt="">
+                                        <p class="text-white font-semibold translate-y-[-18px]">TailwindCss</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
-                                <img class="w-24" src="assets/stacks/sass.png" alt="">
-                                <p class="text-white font-semibold translate-y-[-10px]">Sass</p>
+                             <!-- Skill 7 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/sass.png" alt="">
+                                        <p class="text-white font-semibold translate-y-[-10px]">Sass</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
-                                <img class="w-24" src="assets/stacks/figma.png" alt="">
-                                <p class="text-white font-semibold translate-y-[-10px]">Figma</p>
+                            <!-- Skill 8 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/figma.png" alt="">
+                                        <p class="text-white font-semibold translate-y-[-10px]">Figma</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
-                                <img class="w-24" src="assets/stacks/canva.png" alt="">
-                                <p class="text-white font-semibold translate-y-[1px]">Canva</p>
+                            <!-- Skill 9 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/canva.png" alt="">
+                                        <p class="text-white font-semibold translate-y-[1px]">Canva</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
-                                <img class="w-24" src="assets/stacks/github.png" alt="">
-                                <p class="text-white font-semibold translate-y-1">GitHub</p>
+                            <!-- Skill 10 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/github.png" alt="">
+                                        <p class="text-white font-semibold translate-y-1">GitHub</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
-                                <img class="w-20" src="assets/stacks/git.png" alt="">
-                                <p class="text-white font-semibold translate-y-3">Git</p>
+                            <!-- Skill 11 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-20" src="assets/stacks/git.png" alt="">
+                                        <p class="text-white font-semibold translate-y-3">Git</p>
+                                    </div>
+                                </div>
                             </div>
 
-                            <div class="bg-[#121212]/80 w-[100%] h-40 lg:w-72 lg:h-40 flex flex-col justify-center items-center border-2 rounded-md border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto">
-                                <img class="w-24" src="assets/stacks/node.png" alt="">
-                                <p class="text-white font-semibold translate-y-[1px]">Node</p>
+                            <!-- Skill 12 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/node.png" alt="">
+                                        <p class="text-white font-semibold translate-y-[1px]">Node.js</p>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -308,16 +389,186 @@
         </div>
      </div>
 
+     <!-- Projects -->
+     <div>
+        <div>
+            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Projects</p>
+            <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[180px] h-0.5 mx-auto mt-3"></span>
+
+            <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">Here you’ll find a selection of my completed works, each crafted with dedication and attention to detail. Every project showcases my commitment to quality, innovation, and efficient solutions tailored to meet each client’s unique needs.</p>
+        </div>
+     </div>
+
 
      <!-- Sec 6 - Contato -->
-     <div class="pt-40 lg:pt-24 pb-10">
+     <div id="contato" class="pt-40 lg:pt-24 pb-10">
         <div>
             <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Contact</p>
             <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[180px] h-0.5 mx-auto mt-3"></span>
 
             <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">These are the ways you can reach out to me for services, collaborations, or any inquiries. Feel free to get in touch — I'm always open to new opportunities!</p>
+        </div>
 
+        <div>
+            <div class="grid lg:grid-cols-2 pt-20">
+                <div class="flex flex-col items-center code">
+                    <div class="bg-[#121212]/80 w-[90%] lg:w-[470px] lg:h-[260px] mx-auto rounded-lg flex items-center justify-center drop-shadow-[0_0_4px_gray]">
+                        <div class="bg-black w-[95%] h-[90%] rounded-lg code px-5 pt-6 flex flex-col justify-center ">
+                            <div class="pb-5 flex items-center space-x-3">
+                                <i class="bi bi-envelope-fill text-[#43CA76] text-xl bg-[#43CA76]/20 py-3 px-4 rounded-full"></i>
+                                <span id="receptorEmail" class="text-[#43CA76] text-sm sm:text-lg"></span>
+                            </div>
+
+                            <div class="pb-5 flex items-center space-x-3">
+                                <i class="bi bi-github text-[#43CA76] text-xl bg-[#43CA76]/20 py-3 px-4 rounded-full"></i>
+                                <span id="receptorGitHub" class="text-[#43CA76] text-sm sm:text-lg"></span>
+                            </div>
+
+                            <div class="pb-5 flex items-center space-x-3">
+                                <i class="bi bi-instagram text-[#43CA76] text-xl bg-[#43CA76]/20 py-3 px-4 rounded-full"></i>
+                                <span id="receptorInsta" class="text-[#43CA76] text-sm sm:text-lg"></span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="bg-[#121212]/80 w-[22px] h-[50px] drop-shadow-[0_0_4px_gray]"></div>
+                    <div class="bg-[#121212]/80 w-[60px] h-[10px] drop-shadow-[0_0_4px_gray]"></div>
+
+                    <!-- Abaixo do PC -->
+                    <div class="pt-10 mx-auto flex justify-center items-center text-center lg:text-start px-10">
+                        <div id="contactMe" class="bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border-1 border-[#AE0000] shadow-sm shadow-red-700 rounded-lg p-5 mx-auto flex justify-center items-center">
+                            <div class="flex flex-col gap-8">
+                                <div class="space-y-2">
+                                    <p class="text-white text-xl font-semibold">How do you contact me?</p>
+                                    <span class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] block w-[75px] h-0.5"></span>
+                                </div>
+                                <p class="text-gray-200">I’m always attentive to my communication channels to make sure no message goes unnoticed. Whether through email, social media, or the website form, I’m fully available to receive proposals, questions, and job opportunities.</p>
+                                <p class="text-gray-200">I’m committed to responding promptly and thoughtfully, providing personalized and transparent communication. Every project that comes my way is handled with the utmost dedication, ensuring quality in every detail.</p>
+                                <p class="text-gray-200">For more details, please see my resume below.</p>
+
+                                <div>
+                                    <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-3 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse">
+                                        <i class="bi bi-download"></i>
+                                        <p>Download Resume</p>
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <script>
+                    const textoEmail = "Email: cristian9br@gmail.com";
+                    const receptorEmail = document.getElementById("receptorEmail");
+                    let iEmail = 0;
+
+                    const textoGitHub = "Github: github.com/kauancristian";
+                    const receptorGitHub = document.getElementById("receptorGitHub");
+                    let iGitHub = 0;
+
+                    const textoInsta = "Instagram: kauanxrs_";
+                    const receptorInsta = document.getElementById("receptorInsta");
+                    let iInsta = 0;
+
+                     const exibirInsta = () => {
+                        if(iInsta < textoInsta.length) {
+                            receptorInsta.innerHTML += textoInsta.charAt(iInsta);
+                            iInsta++;
+                            setTimeout(exibirInsta, 100);
+                        }
+                    };
+
+
+                    const exibirGitHub = () => {
+                        if(iGitHub < textoGitHub.length) {
+                            receptorGitHub.innerHTML += textoGitHub.charAt(iGitHub);
+                            iGitHub++;
+                            setTimeout(exibirGitHub, 100);
+                        } else{
+                            exibirInsta();
+                        }
+                    };
+
+                    const exibirEmail = () => {
+                        if(iEmail < textoEmail.length) {
+                            receptorEmail.innerHTML += textoEmail.charAt(iEmail);
+                            iEmail++;
+                            setTimeout(exibirEmail, 100);
+                        } else {
+                            // Quando terminar o e-mail, começa o GitHub
+                            exibirGitHub();
+                        }
+                    };
+
+                    exibirEmail();
+                </script>
+
+
+                <div class="code">
+                    <div id="boxCode" class="bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border-t-[5px] border-t-[#AE0000] shadow-sm shadow-red-700 w-[85%] p-5 rounded-lg mx-auto mt-20 lg:mt-0">
+                        <div class="flex items-center space-x-2">
+                            <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                            <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
+                            <span class="w-3 h-3 bg-green-500 rounded-full"></span>
+                            <span class="text-gray-400 text-sm translate-y-[-1px]">developer.js</span>
+                        </div>
+
+                        <div class="pt-4 text-[14px]">
+                            <span class="text-white">
+                                <span class="text-red-500">const</span> <span class="text-yellow-500">developer</span> = {
+                                <div class="flex flex-col px-10">
+                                    <span>name: <span class="text-red-500">"Kauan Cristian</span>"</span>
+                                    <span>operate: <span class="text-red-500">"Front-end Developer"</span></span>
+                                    <span>locate: <span class="text-red-500">"Brasil - Ceará"</span></span>
+
+                                    <div>
+                                        <p>stacks: <span class="ml-2">[</span></p>
+                                        <ul class="px-10 text-red-500">
+                                            <li>"HTML 5",</li>
+                                            <li>"CSS3",</li>
+                                            <li>"TailwindCss"</li>
+                                            <li>"React"</li>
+                                            <li>"JavaScript"</li>
+                                            <li>"Java"</li>
+                                            <li>"BootStrap"</li>
+                                            <li>"Sass"</li>
+                                            <li>"Node.js"</li>
+                                        </ul>
+                                        <p>] <span class="text-xl">,</span></p>
+                                    </div>
+                                    <div>
+                                        <p>tools: <span class="ml-2">[</span></p>
+                                        <ul class="px-10 text-red-500">
+                                            <li>"Figma",</li>
+                                            <li>"Canva",</li>
+                                            <li>"Gimp"</li>
+                                            <li>"VS Code"</li>
+                                        </ul>
+                                        <p>] <span class="text-xl">,</span></p>
+                                    </div>
+                                    <div class="flex flex-col">
+                                        <span>mission: <span class="text-red-500">"Being the best at what I do, and bringing a unique experience to the user."</span></span>
+                                        <span class="pt-1">observation: <span class="text-red-500">"I always want to improve, so if you want to see a job well done and improved, just call."</span></span>
+                                        <span class="pt-6"><span class="text-red-500">const</span> <span class="text-yellow-500">let's go?</span> = ( ) => {</span>
+                                            <div class="flex flex-col px-7">
+                                                <span><span class="text-red-500">let</span> <span class="text-yellow-500">you</span> = <span class="text-green-500">null</span>;</span>
+                                                <span><span class="text-red-500">if</span>(you work with me) {</span>
+                                                <span class="px-6"><span class="text-yellow-500">you</span> = "satisfied" ;</span>
+                                                <span>}</span>
+                                                <span><span class="text-red-500">else</span> {</span>
+                                                <span class="px-6"><span class="text-yellow-500">you</span> = "sad and regretful"</span>
+                                                <span>}</span>
+                                            </div>
+                                            <span>};</span>
+                                    </div>
+                                </div>
+                            </span>
+                        </div>
+                    </div> 
+                </div>
+            </div>
         </div>
      </div>
+    <script src="https://unpkg.com/scrollreveal"></script>
+     <script src="scroll,.js"></script>
 </body>
 </html>
