@@ -47,4 +47,16 @@ ScrollReveal().reveal("#contactMe", {
     reset: false 
 });
 
+ScrollReveal().reveal("#projectsBox", {
+    delay: 400,       
+    duration: 1000,     
+    distance: '50px',   
+    origin: 'bottom',   
+    reset: false 
+});
+
+
+
+
+
 

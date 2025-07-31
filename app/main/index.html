@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="shortcut icon" href="assets/logoPort.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/coroa.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <title>Kauan Cristian | Front-End Developer</title>
@@ -56,24 +56,25 @@
             background: url(assets/formas-ou-textura-de-fundo-geometrico-abstrato.jpg);
             background-position: center;
             background-size: cover;
+            background-size: cover;
         }
 
         @keyframes animationImage {
             0%{
-                transform: translateY(4px);
+                box-shadow: 1px 1px 0px #CF0000;
             }
 
             50%{
-                transform: translateY(-4px);
+                box-shadow: 1px 1px 40px #CF0000;
             }
 
             100%{
-                transform: translateY(4px);
+                box-shadow: 1px 1px 0px #CF0000;
             }
         }
 
         #myImage{
-            animation: animationImage 1.9s ease-in-out infinite;
+            animation: animationImage 6s ease-in-out infinite;
         }
 
         @keyframes slowSurge {
@@ -112,31 +113,92 @@
             left: 100%;
         }
         
+
+        .scrollbar-hide::-webkit-scrollbar {
+            display: none;
+        }
+        .scrollbar-hide {
+            -ms-overflow-style: none; /* IE e Edge */
+            scrollbar-width: none; /* Firefox */
+        }
     </style>
 </head>
 <body>
     <!-- Sec 1 - Home -->
     <div id="sec1" class="min-h-screen">
-        <header class="h-[70px] border-b border-[#262626] flex lg:justify-between items-center bg-black/90 fixed w-screen z-[9999] top-0">
-            <div class="lg:ml-9">
-                <div class="absolute flex space-x-2 items-center translate-y-[-30px]">
-                    <img class="w-16" src="assets/logoPort.png" alt="">
-                    <p id="p1" class="text-white font-bold text-xl">Kauan Cristian</p>
+        <header class="h-[70px] border-b border-[#262626] flex lg:justify-between lg:items-center bg-black/90 fixed w-screen z-[9999] top-0">
+            <!-- Btn Menu -->
+            <div class="w-screen absolute lg:hidden">
+                <div class="flex justify-end">
+                        <i id="btnMenu" class="bi bi-list text-gray-200 absolute text-2xl py-4 px-5"></i>
                 </div>
             </div>
-            <nav class="">
-                <ul class="flex flex-col lg:flex-row lg:justify-end lg:space-x-5 text-gray-400 items-center">
-                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500"><a href="#sec1">Home</a></li>
-                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500"><a href="#sec2">About</a></li>
-                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500"><a href="#sec3">Skills</a></li>
-                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">Projects</li>
-                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500">Certificates</li>
-                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500"><a href="#contato">Contact</a></li>
-                    <li class="cursor-pointer transition ease-in-out hover:scale-105 duration-300 group"><button class="border rounded-full border-gray-400 p-1 group-hover:bg-gray-500/20"><img class="w-7" src="assets/sun.png" alt=""></button></li>
-                    <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500"><button></button></li>
-                </ul>
-            </nav>
+
+            <div class="lg:ml-9">
+                <div class="absolute flex space-x-2 items-center translate-y-1 lg:translate-y-[-30px]">
+                    <img class="w-16" src="assets/logoPort.png" alt="">
+                    <p id="p1" class="text-white font-bold text-xl hidden lg:block">Kauan Cristian</p>
+                </div>
+            </div>
+            <div id="menu" class="hidden lg:block translate-x-[-100%] lg:translate-x-0 transition-all ease-in-out duration-500">
+                <nav class="bg-[#121212] lg:bg-transparent h-screen w-screen lg:h-full lg:w-full flex lg:justify-end z-[9999] relative p-5 lg:p-0 text-lg flex-col lg:flex-row">
+                    <!-- !! -->
+                    <div class="lg:hidden flex items-center justify-between pb-12 pt-3">
+                        <p class="text-xl font-bold bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent">Menu</p>
+                        <i id="btnClose" class="bi bi-x-lg text-xl text-gray-200 font-bold"></i>
+                    </div>
+                    <ul class="flex flex-col lg:flex-row lg:justify-end space-y-5 lg:space-y-0 lg:space-x-5 text-gray-400 lg:items-center">
+                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0">
+                            <a href="#sec1">Home</a>
+                            <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
+                        </li>
+                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0">
+                            <a href="#sec2">About</a>
+                            <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
+                        </li>
+                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0">
+                            <a href="#sec3">Skills</a>
+                            <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
+                        </li>
+                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0">
+                            <a href="#projects">Projects</a>
+                            <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
+                        </li>
+                        <!-- <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0">Certificates</li> -->
+                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0">
+                            <a href="#contato">Contact</a>
+                            <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
+                        </li>
+                        <!-- Button SUN -->
+                        <li class="cursor-pointer transition ease-in-out hover:scale-105 duration-300 group"><button class="border rounded-full border-gray-400 p-1 group-hover:bg-gray-500/20 hidden lg:block"><img class="w-7" src="assets/sun.png" alt=""></button></li>
+                        <!-- Button Language -->
+                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 hidden lg:block"><button></button></li>
+                    </ul>
+                </nav>
+            </div>
         </header>
+
+        <script>
+            const btnMenu = document.getElementById("btnMenu");
+            const menu = document.getElementById("menu");
+            const btnClose = document.getElementById("btnClose");
+
+            btnMenu.onclick = () => {
+                menu.style.display = "block";
+
+                setTimeout(() => {
+                    menu.style.transform = "translateX(0)";
+                }, 10)
+            };
+
+            btnClose.onclick = () => {
+                menu.style.transform = "translateX(-100%)";
+
+                setTimeout(() => {
+                    menu.style.display = "none";
+                }, 500)
+            }
+        </script>
         <div id="infs-sec1" class="lg:grid lg:grid-cols-2">
             <!-- Texto PC-->
             <div class="hidden lg:block">
@@ -179,7 +241,7 @@
             <!-- Foto -->
             <div class="text-white text-center lg:h-screen flex justify-center lg:items-center mt-40 lg:mt-0">
                 <div class="lg:translate-y-[-10px]">
-                    <div id="myImage" class="bg-gradient-to-r from-[#F70000] via-[#CF0000] to-[#AE0000] p-[5px] rounded-full w-fit drop-shadow-[0_0_20px_red]">
+                    <div id="myImage" class="bg-gradient-to-r from-[#F70000] via-[#CF0000] to-[#AE0000] p-[5px] rounded-full w-fit">
                         <img class="object-cover rounded-full w-64 h-64 bg-[#262626] p-2" src="assets/eu.png" alt="">
                     </div>
                 </div>
@@ -207,11 +269,11 @@
     </div>
 
     <!-- Sec 2 - Sobre mim -->
-     <div id="sec2" class="pt-40 lg:pt-0 pb-10">
+     <div id="sec2" class="pt-20 lg:pt-0 pb-10">
         <div>
             <div id="aboutMe">
                 <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">About Me</p>
-                <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[180px] h-0.5 mx-auto mt-3"></span>
+                <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[150px] h-0.5 mx-auto mt-3"></span>
             </div>
             <p id="textAbout" class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">Learn a little more about me, my acquired knowledge, my journey, and my goals. And, of course, my love for web development.</p>
         </div>
@@ -256,7 +318,7 @@
             <div id="sec3" class="pt-12 lg:pt-32 px-10">
                 <div class="mx-auto">
                     <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">My Skills</p>
-                    <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[180px] h-0.5 mx-auto mt-3"></span>
+                    <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[150px] h-0.5 mx-auto mt-3"></span>
 
                     <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">These are the main technologies and tools I use to build modern, responsive, and functional interfaces.</p>
 
@@ -390,12 +452,84 @@
      </div>
 
      <!-- Projects -->
-     <div>
+     <div id="projects" class="pt-16">
         <div>
             <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Projects</p>
-            <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[180px] h-0.5 mx-auto mt-3"></span>
+            <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[150px] h-0.5 mx-auto mt-3"></span>
 
             <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">Here you’ll find a selection of my completed works, each crafted with dedication and attention to detail. Every project showcases my commitment to quality, innovation, and efficient solutions tailored to meet each client’s unique needs.</p>
+        </div>
+    <div id="projectsBox" class="px-6 md:px-12 lg:px-16 pt-8 relative">
+        <div class="grid lg:grid-cols-3 gap-16">
+            <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]">
+                <div class="overflow-hidden w-full h-60">
+                    <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/RestauranteFelix.png" alt="">
+                 </div>
+                    <div class="p-5 pb-8">
+                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Felix Restaurant</p>
+                        <p class="text-gray-200 pt-5 text-sm">On our website, you can enjoy expertly crafted dishes and also receive an automatically generated PDF with detailed information about your payment transaction — ensuring transparency, security, and convenience for you.</p>
+                        <div class="flex items-center justify-between">
+                            <i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i>
+                            <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                <p>View Live</p>
+                                <i class="bi bi-eye text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]">
+                <div class="overflow-hidden w-full h-60">
+                    <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Cashew.png" alt="">
+                 </div>
+                    <div class="p-5 pb-8">
+                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Cashew</p>
+                        <p class="text-gray-200 pt-5 text-sm">At Cashew, we connect you to top-tier stays with smart, engaging promotions. Each experience is crafted with care, and our automatic PDF summaries ensure transparency and convenience from start to finish..</p>
+                        <div class="flex items-center justify-between">
+                            <i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i>
+                            <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                <p>View Live</p>
+                                <i class="bi bi-eye text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]">
+                <div class="overflow-hidden w-full h-60">
+                    <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Ritmo.png" alt="">
+                 </div>
+                    <div class="p-5 pb-8">
+                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Ritmo Musics</p>
+                        <p class="text-gray-200 pt-5 text-sm">Ritmo Musics brings you the sound that fits your vibe — with smooth streaming, smart playlists, and secure activity tracking for a complete listening experience.</p>
+
+                        <p class="text-gray-200 pt-5 text-sm">At Ritmo, music moves with you — anytime, anywhere.</p>
+                        <div class="flex items-center justify-between">
+                            <i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i>
+                            <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                <p>View Live</p>
+                                <i class="bi bi-eye text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+            </div>
+
+            <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]">
+                <div class="overflow-hidden w-full h-60">
+                    <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Essenza.png" alt="">
+                 </div>
+                    <div class="p-5 pb-8">
+                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold">Essenza Imperiale</p>
+                        <p class="text-gray-200 pt-5 text-sm">At Essenza Imperiale, elegance meets precision in every detail. Explore refined jewelry pieces and enjoy a seamless shopping experience — with a secure cart system and detailed PDF receipts for every purchase.</p>
+                        <div class="flex items-center justify-between">
+                            <i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i>
+                            <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                <p>View Live</p>
+                                <i class="bi bi-eye text-lg"></i>
+                            </button>
+                        </div>
+                    </div>
+            </div>
         </div>
      </div>
 
@@ -404,14 +538,14 @@
      <div id="contato" class="pt-40 lg:pt-24 pb-10">
         <div>
             <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Contact</p>
-            <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[180px] h-0.5 mx-auto mt-3"></span>
+            <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[150px] h-0.5 mx-auto mt-3"></span>
 
             <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">These are the ways you can reach out to me for services, collaborations, or any inquiries. Feel free to get in touch — I'm always open to new opportunities!</p>
         </div>
 
         <div>
             <div class="grid lg:grid-cols-2 pt-20">
-                <div class="flex flex-col items-center code">
+                <div id="pc" class="flex flex-col items-center code">
                     <div class="bg-[#121212]/80 w-[90%] lg:w-[470px] lg:h-[260px] mx-auto rounded-lg flex items-center justify-center drop-shadow-[0_0_4px_gray]">
                         <div class="bg-black w-[95%] h-[90%] rounded-lg code px-5 pt-6 flex flex-col justify-center ">
                             <div class="pb-5 flex items-center space-x-3">
@@ -434,12 +568,12 @@
                     <div class="bg-[#121212]/80 w-[60px] h-[10px] drop-shadow-[0_0_4px_gray]"></div>
 
                     <!-- Abaixo do PC -->
-                    <div class="pt-10 mx-auto flex justify-center items-center text-center lg:text-start px-10">
-                        <div id="contactMe" class="bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border-1 border-[#AE0000] shadow-sm shadow-red-700 rounded-lg p-5 mx-auto flex justify-center items-center pb-10 lg:pb-0">
+                    <div class="pt-10 mx-auto flex justify-center items-center text-center lg:text-start lg:px-10">
+                        <div id="contactMe" class="bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border-1 border-[#AE0000] shadow-sm shadow-red-700 rounded-lg p-5 mx-auto flex justify-center items-center pb-10 w-[85%]">
                             <div class="flex flex-col gap-8">
                                 <div class="space-y-2">
                                     <p class="text-white text-xl font-semibold">How do you contact me?</p>
-                                    <span class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] block w-[75px] h-0.5"></span>
+                                    <span class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] block w-[75px] h-0.5 flex mx-auto lg:mx-0"></span>
                                 </div>
                                 <p class="text-gray-200">I’m always attentive to my communication channels to make sure no message goes unnoticed. Whether through email, social media, or the website form, I’m fully available to receive proposals, questions, and job opportunities.</p>
                                 <p class="text-gray-200">I’m committed to responding promptly and thoughtfully, providing personalized and transparent communication. Every project that comes my way is handled with the utmost dedication, ensuring quality in every detail.</p>
@@ -504,7 +638,7 @@
 
 
                 <div class="code">
-                    <div id="boxCode" class="bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border-t-[5px] border-t-[#AE0000] shadow-sm shadow-red-700 w-[85%] p-5 rounded-lg mx-auto mt-20 lg:mt-0">
+                    <div id="boxCode" class="bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border-t-[5px] border-t-[#AE0000] shadow-sm shadow-red-700 w-[85%] p-5 rounded-lg mx-auto mt-20 lg:mt-0 pb-10">
                         <div class="flex items-center space-x-2">
                             <span class="w-3 h-3 bg-red-500 rounded-full"></span>
                             <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
@@ -568,6 +702,67 @@
             </div>
         </div>
      </div>
+
+     <footer class="pb-10 ">
+        <div class="grid lg:grid-cols-3">
+            <div class="mx-auto flex flex-col justify-center">
+                <span class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] block w-screen h-0.5"></span>
+                <div class="flex space-x-2 text-gray-200 items-center ml-2 lg:ml-0 pt-5 lg:pt-0">
+                    <img class="w-16 lg:w-24" src="assets/logoPort.png" alt="">
+                    <p class="text-lg lg:text-xl font-bold">Kauan Cristian</p>
+                </div>
+                <div class="text-gray-200 px-7 space-y-2">
+                    <p class="bg-gradient-to-r from-[#AE0000] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold">Front-End Developer</p>
+                    <p class="lg:w-[300px]">Always seeking improvement and creating unique web experiences.</p>
+                </div>
+            </div>
+
+            <div class="flex flex-col justify-center items-center pt-5 lg:pt-7">
+                <p class="text-gray-200 px-7">To do anything well requires dedication, but also loving what you do, and without a doubt I <span class="font-semibold bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent">love developing</span>.</p>
+
+                <div class="pt-10 text-sm">
+                    <p class="text-gray-200 text-center lg:text-start">@2025 Developed by Kauan Cristian. All rights reserved.</p>
+                </div>
+            </div>
+
+            <div class="flex justify-center mx-auto relative pt-[100px]">
+                <div class="grid grid-cols-2 space-x-9">
+                    <div class="flex flex-col">
+                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-lg">Explore More</p>
+                        <ul class="text-gray-400 pt-5">
+                            <a href="#sec1">
+                                <li class="p-1 cursor-pointer hover:text-white transition ease-in-out duration-500 w-1">Home</li>
+                            </a>
+                            <a href="#sec2">
+                                <li class="p-1 cursor-pointer hover:text-white transition ease-in-out duration-500 w-1">About</li>
+                            </a>
+                            <a href="#sec3">
+                                <li class="p-1 cursor-pointer hover:text-white transition ease-in-out duration-500 w-1">Skills</li>
+                            </a>
+                            <a href="#projects">
+                                <li class="p-1 cursor-pointer hover:text-white transition ease-in-out duration-500 w-1">Projects</li>
+                            </a>
+                            <!-- <a href="">
+                                <li class="p-1 cursor-pointer hover:text-white transition ease-in-out duration-500 w-1">Certificates</li>
+                            </a> -->
+                            <a href="#contato">
+                                <li class="p-1 cursor-pointer hover:text-white transition ease-in-out duration-500 w-1">Contact</li>
+                            </a>
+                        </ul>
+                    </div>
+
+                    <div class="flex flex-col">
+                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-lg">Associate</p>
+                        <div class="flex space-x-4 text-gray-400 text-3xl pt-3">
+                            <a href="https://github.com/kauancristian"><i class="bi bi-github cursor-pointer hover:translate-y-[-3px] hover:text-[#AE0000] transition ease-in-out duration-500"></i></a>
+                            <a href="mailto:cristian9br@gmail.com"><i class="bi bi-envelope-fill cursor-pointer hover:translate-y-[-3px] hover:text-[#AE0000] transition ease-in-out duration-500"></i></a>
+                            <a href="https://www.instagram.com/kauanxrs_/"><i class="bi bi-instagram cursor-pointer hover:translate-y-[-3px] hover:text-[#AE0000] transition ease-in-out duration-500"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+     </footer>
     <script src="https://unpkg.com/scrollreveal"></script>
      <script src="scroll,.js"></script>
 </body>
