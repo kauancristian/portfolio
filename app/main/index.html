@@ -12,6 +12,7 @@
         @import url('https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Assistant:wght@200..800&family=Bangers&family=Bebas+Neue&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lilita+One&family=Love+Ya+Like+A+Sister&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Passion+One:wght@400;700;900&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap');
 
         @import url('https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Assistant:wght@200..800&family=Bangers&family=Bebas+Neue&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lilita+One&family=Love+Ya+Like+A+Sister&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Passion+One:wght@400;700;900&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&family=Source+Code+Pro:ital,wght@0,200..900;1,200..900&family=Space+Grotesk:wght@300..700&display=swap');
+        
 
         *{
             margin: 0;
@@ -23,7 +24,11 @@
             scroll-behavior: smooth;
         }
 
-        p, h1, h2 {
+        h1, h2{
+            font-family: "Space Grotesk", sans-serif;
+        }
+
+        p {
             font-family: "Montserrat", sans-serif;
         }
 
@@ -142,7 +147,7 @@
             <div class="lg:ml-9">
                 <div class="absolute flex space-x-2 items-center translate-y-1 lg:translate-y-[-30px]">
                     <img class="w-16" src="assets/logoPort.png" alt="">
-                    <p id="p1" class="text-white font-bold text-xl hidden lg:block">Kauan Cristian</p>
+                    <h1 id="p1" class="text-white font-bold text-xl lg:text-2xl hidden lg:block">Kauan Cristian</h1>
                 </div>
             </div>
             <div id="menu" class="hidden lg:block translate-x-[-100%] lg:translate-x-0 transition-all ease-in-out duration-500">
@@ -153,31 +158,31 @@
                         <i id="btnClose" class="bi bi-x-lg text-xl text-gray-200 font-bold"></i>
                     </div>
                     <ul class="flex flex-col lg:flex-row lg:justify-end space-y-5 lg:space-y-0 lg:space-x-5 text-gray-400 lg:items-center">
-                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0">
+                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">
                             <a href="#sec1">Home</a>
                             <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
                         </li>
-                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0">
+                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">
                             <a href="#sec2">About</a>
                             <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
                         </li>
-                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0">
+                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">
                             <a href="#sec3">Skills</a>
                             <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
                         </li>
-                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0">
+                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">
                             <a href="#projects">Projects</a>
                             <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
                         </li>
-                        <!-- <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0">Certificates</li> -->
-                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0">
+                        <!-- <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">Certificates</li> -->
+                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">
                             <a href="#contato">Contact</a>
                             <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
                         </li>
                         <!-- Button SUN -->
                         <li class="cursor-pointer transition ease-in-out hover:scale-105 duration-300 group"><button class="border rounded-full border-gray-400 p-1 group-hover:bg-gray-500/20 hidden"><img class="w-7" src="assets/sun.png" alt=""></button></li>
                         <!-- Button Language -->
-                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 hidden lg:block"><button></button></li>
+                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline hidden lg:block"><button></button></li>
                     </ul>
                 </nav>
             </div>
@@ -204,24 +209,24 @@
                 }, 500)
             }
         </script>
-        <div id="infs-sec1" class="lg:grid lg:grid-cols-2">
-            <!-- Texto PC-->
-            <div class="hidden lg:block">
-                <div class="text-white lg:h-screen flex justify-center items-center">
-                    <div class="transform translate-y-[-10px]">
+        <div id="infs-sec1" class="text-center">
+            <!-- Texto-->
+            <div class="">
+                <div class="text-white h-screen flex justify-center items-center">
+                    <div class="transform translate-y-8">
                         <div>
-                            <div class="font-semibold">
-                                <p class="lg:text-2xl">Hello World, I'm</p>
-                                <p class="lg:text-6xl bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent">Kauan Cristian</p>
+                            <div class="font-semibold space-y-7">
+                                <h1 class="bg-gradient-to-r from-[#94032F]/50 via-[#CF0000]/50 to-[#AE0000]/50 border border-[#AE0000] rounded-full inline py-2 px-3">Kauan Cristian - Front-End</h1>
+                                <h1 class="text-4xl lg:text-7xl text-white lg:w-[950px] px-5 lg:px-0">Developing interfaces that <span class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent">delight</span></h1>
                             </div>
-                            <p id="typing" class="w-[500px] text-gray-300 pt-5">Front-End Developer specialized in UI/UX. I turn ideas into intuitive interfaces and memorable experiences, always focused on delivering the best for the user.</p>
-                            <div class="flex flex-col lg:flex-row lg:space-x-3">
-                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-3 rounded-lg mt-9 transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse">
+                            <p id="typing" class="lg:w-[500px] text-gray-300 pt-5 text-center mx-auto px-8 lg:px-0">Front-End Developer specialized in UI/UX. I turn ideas into intuitive interfaces and memorable experiences, always focused on delivering the best for the user.</p>
+                            <div class="flex flex-col lg:flex-row justify-center items-center lg:space-x-3 mt-9 space-y-5 lg:space-y-0">
+                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-3 rounded-lg  transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse">
                                     <p>Browse my work</p>
                                     <i class="bi bi-arrow-right group-hover:translate-x-2 transition ease-in-out duration-300"></i>
                                 </button>
                                 <a href="#contato">
-                                    <button class="text-white bg-transparent border border-[#AE0000] py-3 rounded-lg mt-9 transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:bg-[#AE0000]/20 hover:translate-y-[-5px] ease-in-out duration-150 btnBrowse">
+                                    <button class="text-white bg-transparent border border-[#AE0000] py-3 rounded-lg transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:bg-[#AE0000]/20 hover:translate-y-[-5px] ease-in-out duration-150 btnBrowse">
                                         <p>Let's talk?</p>
                                         <i class="bi bi-chat-dots transition ease-in-out duration-300"></i>
                                     </button>
@@ -243,87 +248,83 @@
                 </div>
             </div>
 
-            <!-- Foto -->
-            <div class="text-white text-center lg:h-screen flex justify-center lg:items-center mt-40 lg:mt-0">
-                <div class="lg:translate-y-[-10px]">
-                    <div id="myImage" class="bg-gradient-to-r from-[#F70000] via-[#CF0000] to-[#AE0000] p-[5px] rounded-full w-fit">
-                        <img class="object-cover rounded-full w-64 h-64 bg-[#262626] p-2" src="assets/eu.png" alt="">
-                    </div>
-                </div>
-            </div>
-
-            <!-- Texto Mobile -->
-            <div class="lg:hidden block">
-                <div class="text-white lg:h-screen flex justify-center items-center">
-                    <div class="text-center pt-7">
-                        <div>
-                            <div class="font-semibold">
-                                <p class="lg:text-2xl">Hello Word, I'm</p>
-                                <p class="lg:text-6xl bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent">Kauan Cristian</p>
-                            </div>
-                            <p id="typing" class="px-5 text-gray-300 pt-5">Front-End Developer specialized in UI/UX. I turn ideas into intuitive interfaces and memorable experiences, always focused on delivering the best for the user.</p>
-                            <button id="btnBrowse" class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-3 rounded-md mt-9 transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group mx-auto">
-                                <p>Browse my work</p>
-                                <i class="bi bi-arrow-right group-hover:translate-x-2 transition ease-in-out duration-300"></i>
-                            </button>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            
         </div>
     </div>
 
     <!-- Sec 2 - Sobre mim -->
-     <div id="sec2" class="pt-20 lg:pt-0 pb-10">
+     <div id="sec2" class="pt-20 pb-10">
         <div>
-            <div id="aboutMe">
-                <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">About Me</p>
-                <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[150px] h-0.5 mx-auto mt-3"></span>
+            <div id="aboutMe" class="flex flex-col justify-center items-center">
+                <h1 class="bg-gradient-to-r from-[#94032F]/50 via-[#CF0000]/50 to-[#AE0000]/50 border border-[#AE0000] rounded-full inline py-2 px-3 text-white">ABOUT ME</h1>
+                <h2 class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Who am I?</h2>
             </div>
             <p id="textAbout" class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">Learn a little more about me, my acquired knowledge, my journey, and my goals. And, of course, my love for web development.</p>
         </div>
 
         <div class="pt-16">
-            <div id="boxsAbout" class="grid lg:grid-cols-3 gap-20 lg:gap-10 px-10">
-                <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#AE0000]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002] w-[100%] sm:w-[500px] lg:w-full">
-                    <div class="flex items-center space-x-2">
-                        <i class="bi bi-person-circle text-[#C20000]"></i>
-                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">Who am I?</p>
-                    </div>
 
-                    <div class="text-gray-200 pt-5 text-sm">
-                        <p>I'm Kauan Cristian, a passionate and confident Front-End Developer. I love learning, solving problems, and creating interactive, user-friendly web experiences. My goal is to turn ideas into smooth, modern, and meaningful interfaces.</p>
+            <div class="grid lg:grid-cols-2">
+
+                <!-- Foto -->
+                <div class="flex flex-col justify-center items-center space-y-5">
+                    <div class="text-white text-center flex justify-center lg:items-center mt-40 lg:mt-0">
+                        <div class="lg:translate-y-[-10px]">
+                            <div id="myImage" class="bg-gradient-to-r from-[#F70000] via-[#CF0000] to-[#AE0000] p-[5px] rounded-full w-fit">
+                                <img class="object-cover rounded-full w-64 h-64 bg-[#262626] p-2" src="assets/eu.png" alt="">
+                            </div>
+                        </div>
+                    </div>
+                    <div>
+                        <h2 class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl font-semibold">DEV.KAUAN</h2>
                     </div>
                 </div>
 
-                <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#AE0000]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002] w-[100%] sm:w-[500px] lg:w-full">
-                    <div class="flex items-center space-x-2">
-                        <i class="bi bi-rocket-takeoff text-[#C20000]"></i>
-                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">My goal</p>
+                <!-- Boxs -->
+                <div id="boxsAbout" class="grid lg:grid-rows-3 gap-20 lg:gap-10 px-10">
+                    <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#AE0000]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002] w-[100%] sm:w-[500px] lg:w-full">
+                        <div class="flex items-center space-x-2">
+                            <i class="bi bi-person-circle text-[#C20000]"></i>
+                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">Who am I?</p>
+                        </div>
+
+                        <div class="text-gray-200 pt-5 text-sm">
+                            <p>I'm Kauan Cristian, a passionate and confident Front-End Developer. I love learning, solving problems, and creating interactive, user-friendly web experiences. My goal is to turn ideas into smooth, modern, and meaningful interfaces.</p>
+                        </div>
                     </div>
 
-                    <div class="text-gray-200 pt-5 text-sm">
-                          <p>My goal is to be the best at what I do, creating user interfaces and digital solutions that offer the best experience. I strive to improve daily, learning and staying updated with the latest technologies. I deliver not just software, but intuitive, efficient, and modern experiences, always staying at the forefront of Front-End development.</p>
-                    </div>
-                </div>
-                
-                <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#AE0000]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002] w-[100%] sm:w-[500px] lg:w-full">
-                    <div class="flex items-center space-x-2">
-                        <i class="bi bi-chat-heart-fill text-[#C20000]"></i>
-                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">What do I follow</p>
-                    </div>
+                    <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#AE0000]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002] w-[100%] sm:w-[500px] lg:w-full">
+                        <div class="flex items-center space-x-2">
+                            <i class="bi bi-rocket-takeoff text-[#C20000]"></i>
+                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">My goal</p>
+                        </div>
 
-                    <div class="text-gray-200 pt-5 text-sm">
-                        <p>Being a developer goes beyond writing code. It requires vision, understanding of design and user experience, teamwork, and above all, passion. Loving what you do is what turns projects into great experiences. I’m always learning and striving to give my best — coding is not just a job for me, it’s a purpose.</p>
+                        <div class="text-gray-200 pt-5 text-sm">
+                            <p>My goal is to be the best at what I do, creating user interfaces and digital solutions that offer the best experience. I strive to improve daily, learning and staying updated with the latest technologies. I deliver not just software, but intuitive, efficient, and modern experiences, always staying at the forefront of Front-End development.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#AE0000]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002] w-[100%] sm:w-[500px] lg:w-full">
+                        <div class="flex items-center space-x-2">
+                            <i class="bi bi-chat-heart-fill text-[#C20000]"></i>
+                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">What do I follow</p>
+                        </div>
+
+                        <div class="text-gray-200 pt-5 text-sm">
+                            <p>Being a developer goes beyond writing code. It requires vision, understanding of design and user experience, teamwork, and above all, passion. Loving what you do is what turns projects into great experiences. I’m always learning and striving to give my best — coding is not just a job for me, it’s a purpose.</p>
+                        </div>
                     </div>
                 </div>
+
             </div>
+            
+        </div>
 
             <!-- Sec 3 - Skills -->
             <div id="sec3" class="pt-12 lg:pt-32 px-10">
-                <div class="mx-auto">
-                    <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">My Skills</p>
-                    <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[150px] h-0.5 mx-auto mt-3"></span>
+                <div class="mx-auto flex flex-col justify-center items-center">
+                    <h1 class="bg-gradient-to-r from-[#94032F]/50 via-[#CF0000]/50 to-[#AE0000]/50 border border-[#AE0000] rounded-full inline py-2 px-3 text-white">MY SKILLS</h1>
+                    <h2 class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5 leading-tight">My technology stacks</h2>
 
                     <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">These are the main technologies and tools I use to build modern, responsive, and functional interfaces.</p>
 
@@ -335,7 +336,7 @@
                                 <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d]">
                                     <div class="flex flex-col justify-center items-center translate-y-[-10px]">
                                         <img class="w-28" src="assets/stacks/html.png" alt="">
-                                        <p class="text-white font-semibold translate-y-[-6px]">HTML 5</p>
+                                        <h2 class="text-white font-semibold translate-y-[-6px]">HTML 5</h2>
                                     </div>
                                 </div>
                             </div>
@@ -345,7 +346,7 @@
                                 <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-20" src="assets/stacks/css.png" alt="">
-                                        <p class="text-white font-semibold translate-y-1">CSS 3</p>
+                                        <h2 class="text-white font-semibold translate-y-1">CSS 3</h2>
                                     </div>
                                 </div>
                             </div>
@@ -355,7 +356,7 @@
                                 <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-32" src="assets/stacks/js.png" alt="">
-                                        <p class="text-white font-semibold translate-y-1">JavaScript</p>
+                                        <h2 class="text-white font-semibold translate-y-1">JavaScript</h2>
                                     </div>
                                 </div>
                             </div>
@@ -365,7 +366,7 @@
                                 <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-32" src="assets/stacks/java.png" alt="">
-                                        <p class="text-white font-semibold translate-y-[-23px]">Java</p>
+                                        <h2 class="text-white font-semibold translate-y-[-23px]">Java</h2>
                                     </div>
                                 </div>
                             </div>
@@ -375,7 +376,7 @@
                                 <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-24" src="assets/stacks/react.png" alt="">
-                                        <p class="text-white font-semibold translate-y-[-10px]">React</p>
+                                        <h2 class="text-white font-semibold translate-y-[-10px]">React</h2>
                                     </div>
                                 </div>
                             </div>
@@ -385,7 +386,7 @@
                                 <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-24" src="assets/stacks/tailwind.png" alt="">
-                                        <p class="text-white font-semibold translate-y-[-18px]">TailwindCss</p>
+                                        <h2 class="text-white font-semibold translate-y-[-18px]">TailwindCss</h2>
                                     </div>
                                 </div>
                             </div>
@@ -395,7 +396,7 @@
                                 <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-24" src="assets/stacks/sass.png" alt="">
-                                        <p class="text-white font-semibold translate-y-[-10px]">Sass</p>
+                                        <h2 class="text-white font-semibold translate-y-[-10px]">Sass</h2>
                                     </div>
                                 </div>
                             </div>
@@ -405,7 +406,7 @@
                                 <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-24" src="assets/stacks/figma.png" alt="">
-                                        <p class="text-white font-semibold translate-y-[-10px]">Figma</p>
+                                        <h2 class="text-white font-semibold translate-y-[-10px]">Figma</h2>
                                     </div>
                                 </div>
                             </div>
@@ -415,7 +416,7 @@
                                 <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-24" src="assets/stacks/canva.png" alt="">
-                                        <p class="text-white font-semibold translate-y-[1px]">Canva</p>
+                                        <h2 class="text-white font-semibold translate-y-[1px]">Canva</h2>
                                     </div>
                                 </div>
                             </div>
@@ -425,7 +426,7 @@
                                 <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-24" src="assets/stacks/github.png" alt="">
-                                        <p class="text-white font-semibold translate-y-1">GitHub</p>
+                                        <h2 class="text-white font-semibold translate-y-1">GitHub</h2>
                                     </div>
                                 </div>
                             </div>
@@ -435,7 +436,7 @@
                                 <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-20" src="assets/stacks/git.png" alt="">
-                                        <p class="text-white font-semibold translate-y-3">Git</p>
+                                        <h2 class="text-white font-semibold translate-y-3">Git</h2>
                                     </div>
                                 </div>
                             </div>
@@ -445,7 +446,7 @@
                                 <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-24" src="assets/stacks/node.png" alt="">
-                                        <p class="text-white font-semibold translate-y-[1px]">Node.js</p>
+                                        <h2 class="text-white font-semibold translate-y-[1px]">Node.js</h2>
                                     </div>
                                 </div>
                             </div>
@@ -457,94 +458,95 @@
      </div>
 
      <!-- Projects -->
-     <div id="projects" class="pt-16">
-        <div>
-            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Projects</p>
-            <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[150px] h-0.5 mx-auto mt-3"></span>
+    <div id="projects" class="pt-16">
+        <div class="flex flex-col justify-center items-center">
+            <h1 class="bg-gradient-to-r from-[#94032F]/50 via-[#CF0000]/50 to-[#AE0000]/50 border border-[#AE0000] rounded-full inline py-2 px-3 text-white">PROJECTS</h1>
+            <h2 class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5 leading-tight">Developed by me</h2>
 
             <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">Here you’ll find a selection of my completed works, each crafted with dedication and attention to detail. Every project showcases my commitment to quality, innovation, and efficient solutions tailored to meet each client’s unique needs.</p>
         </div>
-    <div id="projectsBox" class="px-6 md:px-12 lg:px-16 pt-8 relative">
-        <div class="grid lg:grid-cols-3 gap-16">
-            <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]w-full sm:w-[75%] lg:w-full mx-auto">
-                <div class="overflow-hidden w-full h-60">
-                    <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/RestauranteFelix.png" alt="">
-                 </div>
-                    <div class="p-5 pb-8">
-                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Felix Restaurant</p>
-                        <p class="text-gray-200 pt-5 text-sm">On our website, you can enjoy expertly crafted dishes and also receive an automatically generated PDF with detailed information about your payment transaction — ensuring transparency, security, and convenience for you.</p>
-                        <div class="flex items-center justify-between">
-                            <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
-                            <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
-                                <p>View Live</p>
-                                <i class="bi bi-eye text-lg"></i>
-                            </button>
-                        </div>
-                    </div>
-            </div>
 
-            <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]w-full sm:w-[75%] lg:w-full mx-auto">
-                <div class="overflow-hidden w-full h-60">
-                    <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Cashew.png" alt="">
-                 </div>
-                    <div class="p-5 pb-8">
-                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Cashew</p>
-                        <p class="text-gray-200 pt-5 text-sm">At Cashew, we connect you to top-tier stays with smart, engaging promotions. Each experience is crafted with care, and our automatic PDF summaries ensure transparency and convenience from start to finish..</p>
-                        <div class="flex items-center justify-between">
-                            <a href="https://github.com/kauancristian/Cashew-Digital-Marketing"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
-                            <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
-                                <p>View Live</p>
-                                <i class="bi bi-eye text-lg"></i>
-                            </button>
-                        </div>
+        <div id="projectsBox" class="px-6 md:px-12 lg:px-16 pt-8 relative">
+            <div class="grid lg:grid-cols-3 gap-16">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]w-full sm:w-[75%] lg:w-full mx-auto">
+                    <div class="overflow-hidden w-full h-60">
+                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/RestauranteFelix.png" alt="">
                     </div>
-            </div>
-
-            <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]w-full sm:w-[75%] lg:w-full mx-auto">
-                <div class="overflow-hidden w-full h-60">
-                    <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Ritmo.png" alt="">
-                 </div>
-                    <div class="p-5 pb-8">
-                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Ritmo Musics</p>
-                        <p class="text-gray-200 pt-5 text-sm">Ritmo Musics brings you the sound that fits your vibe — with smooth streaming, smart playlists, and secure activity tracking for a complete listening experience.</p>
-
-                        <p class="text-gray-200 pt-5 text-sm">At Ritmo, music moves with you — anytime, anywhere.</p>
-                        <div class="flex items-center justify-between">
-                            <a href="https://github.com/kauancristian/Ritmo-Music"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
-                            <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
-                                <p>View Live</p>
-                                <i class="bi bi-eye text-lg"></i>
-                            </button>
+                        <div class="p-5 pb-8">
+                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Felix Restaurant</p>
+                            <p class="text-gray-200 pt-5 text-sm">On our website, you can enjoy expertly crafted dishes and also receive an automatically generated PDF with detailed information about your payment transaction — ensuring transparency, security, and convenience for you.</p>
+                            <div class="flex items-center justify-between">
+                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
+                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                    <p>View Live</p>
+                                    <i class="bi bi-eye text-lg"></i>
+                                </button>
+                            </div>
                         </div>
-                    </div>
-            </div>
+                </div>
 
-            <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]w-full sm:w-[75%] lg:w-full mx-auto">
-                <div class="overflow-hidden w-full h-60">
-                    <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Essenza.png" alt="">
-                 </div>
-                    <div class="p-5 pb-8">
-                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold">Essenza Imperiale</p>
-                        <p class="text-gray-200 pt-5 text-sm">At Essenza Imperiale, elegance meets precision in every detail. Explore refined jewelry pieces and enjoy a seamless shopping experience — with a secure cart system and detailed PDF receipts for every purchase.</p>
-                        <div class="flex items-center justify-between">
-                            <a href="https://github.com/kauancristian/Essenza_Imperiale"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
-                            <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
-                                <p>View Live</p>
-                                <i class="bi bi-eye text-lg"></i>
-                            </button>
-                        </div>
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]w-full sm:w-[75%] lg:w-full mx-auto">
+                    <div class="overflow-hidden w-full h-60">
+                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Cashew.png" alt="">
                     </div>
-            </div>
+                        <div class="p-5 pb-8">
+                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Cashew</p>
+                            <p class="text-gray-200 pt-5 text-sm">At Cashew, we connect you to top-tier stays with smart, engaging promotions. Each experience is crafted with care, and our automatic PDF summaries ensure transparency and convenience from start to finish..</p>
+                            <div class="flex items-center justify-between">
+                                <a href="https://github.com/kauancristian/Cashew-Digital-Marketing"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
+                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                    <p>View Live</p>
+                                    <i class="bi bi-eye text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]w-full sm:w-[75%] lg:w-full mx-auto">
+                    <div class="overflow-hidden w-full h-60">
+                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Ritmo.png" alt="">
+                    </div>
+                        <div class="p-5 pb-8">
+                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Ritmo Musics</p>
+                            <p class="text-gray-200 pt-5 text-sm">Ritmo Musics brings you the sound that fits your vibe — with smooth streaming, smart playlists, and secure activity tracking for a complete listening experience.</p>
+
+                            <p class="text-gray-200 pt-5 text-sm">At Ritmo, music moves with you — anytime, anywhere.</p>
+                            <div class="flex items-center justify-between">
+                                <a href="https://github.com/kauancristian/Ritmo-Music"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
+                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                    <p>View Live</p>
+                                    <i class="bi bi-eye text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                </div>
+
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]w-full sm:w-[75%] lg:w-full mx-auto">
+                    <div class="overflow-hidden w-full h-60">
+                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Essenza.png" alt="">
+                    </div>
+                        <div class="p-5 pb-8">
+                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold">Essenza Imperiale</p>
+                            <p class="text-gray-200 pt-5 text-sm">At Essenza Imperiale, elegance meets precision in every detail. Explore refined jewelry pieces and enjoy a seamless shopping experience — with a secure cart system and detailed PDF receipts for every purchase.</p>
+                            <div class="flex items-center justify-between">
+                                <a href="https://github.com/kauancristian/Essenza_Imperiale"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
+                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                    <p>View Live</p>
+                                    <i class="bi bi-eye text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                </div>
         </div>
      </div>
 
 
      <!-- Sec 6 - Contato -->
      <div id="contato" class="pt-40 lg:pt-24 pb-10">
-        <div>
-            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Contact</p>
-            <span class="block bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] w-[150px] h-0.5 mx-auto mt-3"></span>
-
+        <div class="flex flex-col justify-center items-center">
+            <h1 class="bg-gradient-to-r from-[#94032F]/50 via-[#CF0000]/50 to-[#AE0000]/50 border border-[#AE0000] rounded-full inline py-2 px-3 text-white">CONTACT</h1>
+            <h2 class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Talk to me</h2>
+            
             <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">These are the ways you can reach out to me for services, collaborations, or any inquiries. Feel free to get in touch — I'm always open to new opportunities!</p>
         </div>
 
@@ -714,7 +716,7 @@
                 <span class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] block w-screen h-0.5"></span>
                 <div class="flex space-x-2 text-gray-200 items-center ml-2 lg:ml-0 pt-5 lg:pt-0">
                     <img class="w-16 lg:w-24" src="assets/logoPort.png" alt="">
-                    <p class="text-lg lg:text-xl font-bold">Kauan Cristian</p>
+                    <h2 class="text-lg lg:text-xl font-bold">Kauan Cristian</h2>
                 </div>
                 <div class="text-gray-200 px-7 space-y-2">
                     <p class="bg-gradient-to-r from-[#AE0000] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold">Front-End Developer</p>
