@@ -45,7 +45,9 @@ Developing modern, optimized, and functional web projects
 🌐 Live Website
 
 Check out the online version of my portfolio here:
-👉 Portfolio – Matheus Felix
+
+ [Portfolio – Kauan Cristian](https://portfolio-kauancristian.netlify.app/)
+👉 
 
 ---
 
