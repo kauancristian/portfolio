@@ -1,0 +1,122 @@
+<div class="grid grid-cols-2 md:grid-cols-3 xl:grid-cols-4 gap-9">
+
+                            <!-- Skill 1 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d]">
+                                    <div class="flex flex-col justify-center items-center translate-y-[-10px]">
+                                        <img class="w-28" src="assets/stacks/html.png" alt="">
+                                        <h2 class="text-white font-semibold translate-y-[-6px]">HTML 5</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 2 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-20" src="assets/stacks/css.png" alt="">
+                                        <h2 class="text-white font-semibold translate-y-1">CSS 3</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!-- Skill 3 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-32" src="assets/stacks/js.png" alt="">
+                                        <h2 class="text-white font-semibold translate-y-1">JavaScript</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!-- Skill 4 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-32" src="assets/stacks/java.png" alt="">
+                                        <h2 class="text-white font-semibold translate-y-[-23px]">Java</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!-- Skill 5 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/react.png" alt="">
+                                        <h2 class="text-white font-semibold translate-y-[-10px]">React</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!-- Skill 6 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/tailwind.png" alt="">
+                                        <h2 class="text-white font-semibold translate-y-[-18px]">TailwindCss</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                             <!-- Skill 7 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/sass.png" alt="">
+                                        <h2 class="text-white font-semibold translate-y-[-10px]">Sass</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 8 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/figma.png" alt="">
+                                        <h2 class="text-white font-semibold translate-y-[-10px]">Figma</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 9 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/canva.png" alt="">
+                                        <h2 class="text-white font-semibold translate-y-[1px]">Canva</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 10 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/github.png" alt="">
+                                        <h2 class="text-white font-semibold translate-y-1">GitHub</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 11 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-20" src="assets/stacks/git.png" alt="">
+                                        <h2 class="text-white font-semibold translate-y-3">Git</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 12 -->
+                            <div class="group w-full lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-24" src="assets/stacks/node.png" alt="">
+                                        <h2 class="text-white font-semibold translate-y-[1px]">Node.js</h2>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>

@@ -24,7 +24,15 @@
             scroll-behavior: smooth;
         }
 
-        h1, h2{
+        body{
+            background: url(assets/bg.jpg);
+        }
+
+        #sec1{
+            background: url(assets/bg-red.png);
+        }
+
+        h1, h2, li{
             font-family: "Space Grotesk", sans-serif;
         }
 
@@ -41,31 +49,31 @@
             display: inline-flex;
         }
 
-        .nav-bar::after{
-           content: '';
-           position: absolute;
-           left: 0;
-           bottom: -4px;
-           width: 0;
-           height: 2px;
-           background-origin: left;
-           background-image: linear-gradient(#94032F ,#CF0000 , #AE0000);
-           transition: width 0.5s;
-        }
-
-        .nav-bar:hover::after{
-            width: 100%;
-        }
-
-        body{
-            background: url(assets/bg.jpg);
-            background-position: center;
-            background-size: cover;
-        }
-
         @media screen and (max-width:1024px) {
             body{
                 background: black;
+            }
+        }
+
+        @media screen and (min-width:1024px) {
+            .nav-bar::after{
+                content: '';
+                position: absolute;
+                left: 0;
+                bottom: -4px;
+                width: 0;
+                height: 2px;
+                background-origin: left;
+                background-image: linear-gradient(#94032F ,#CF0000 , #AE0000);
+                transition: width 0.5s;
+            }
+
+            .nav-bar:hover::after{
+                width: 100%;
+            }
+
+            #menu{
+                display: block !important;
             }
         }
 
@@ -131,16 +139,53 @@
             -ms-overflow-style: none; /* IE e Edge */
             scrollbar-width: none; /* Firefox */
         }
+
+
+        .scaleBtn{
+            position: relative;
+            z-index: 1;
+        }
+
+        .scaleBtn::after{
+            content: "";
+            position: absolute;
+            inset: 0;
+            background-color: #ae000020;
+            transform: scale(1);
+            border-radius: inherit;
+            z-index: -1;
+            transition: transform 0.8s ease-in-out;
+            animation: scalePulse 1.2s ease-in-out infinite;
+        }
+
+        @keyframes scalePulse {
+            0%{
+                transform: scale(1.5);
+                opacity: 1;
+            }
+
+            50%{
+                transform: scale(1);
+                opacity: 0.5;
+            }
+
+            100%{
+                transform: scale(1.5);
+                opacity: 1;
+            }
+        }
+
     </style>
 </head>
-<body>
-    <!-- Sec 1 - Home -->
-    <div id="sec1" class="min-h-screen">
+<body class="bg-[#050304]">
+    <!-- Sec 1 - Home -->   
+    <div id="sec1" class="min-h-screen shadow-lg shadow-[#AE0000]/30">
+        <div class="bg-black inset-0 absolute z-50 opacity-80"></div>
         <header class="h-[70px] border-b border-[#262626] flex lg:justify-between lg:items-center bg-black/90 fixed w-screen z-[9999] top-0">
             <!-- Btn Menu -->
             <div class="w-screen absolute lg:hidden">
                 <div class="flex justify-end">
-                        <i id="btnMenu" class="bi bi-list text-gray-200 absolute text-2xl py-4 px-5"></i>
+                        <i tabindex="0" id="btnMenu" class="bi bi-list text-gray-200 absolute text-2xl py-4 px-5 focus:text-[#AE0000] transition ease-in-out duration-300"></i>
                 </div>
             </div>
 
@@ -151,33 +196,33 @@
                 </div>
             </div>
             <div id="menu" class="hidden lg:block translate-x-[-100%] lg:translate-x-0 transition-all ease-in-out duration-500">
-                <nav class="bg-[#121212] lg:bg-transparent h-screen w-screen lg:h-full lg:w-full flex lg:justify-end z-[9999] relative p-5 lg:p-0 text-lg flex-col lg:flex-row">
+                <nav class="bg-black lg:bg-transparent h-screen w-[60vw] lg:h-full lg:w-full flex lg:justify-end z-[9999] relative p-5 lg:p-0 text-lg flex-col lg:flex-row border-r lg:border-r-none border-r-[#AE0000]">
                     <!-- !! -->
                     <div class="lg:hidden flex items-center justify-between pb-12 pt-3">
                         <p class="text-xl font-bold bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent">Menu</p>
-                        <i id="btnClose" class="bi bi-x-lg text-xl text-gray-200 font-bold"></i>
+                        <i tabindex="0" id="btnClose" class="bi bi-x-lg text-xl text-gray-200 font-bold focus:text-[#AE0000] transition ease-in-out duration-300"></i>
                     </div>
                     <ul class="flex flex-col lg:flex-row lg:justify-end space-y-5 lg:space-y-0 lg:space-x-5 text-gray-400 lg:items-center">
                         <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">
                             <a href="#sec1">Home</a>
-                            <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
+                            <span class="h-0.5 w-[90%] lg:w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
                         </li>
                         <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">
                             <a href="#sec2">About</a>
-                            <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
+                            <span class="h-0.5 w-[90%] lg:w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
                         </li>
                         <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">
                             <a href="#sec3">Skills</a>
-                            <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
+                            <span class="h-0.5 w-[90%] lg:w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
                         </li>
                         <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">
                             <a href="#projects">Projects</a>
-                            <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
+                            <span class="h-0.5 w-[90%] lg:w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
                         </li>
                         <!-- <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">Certificates</li> -->
                         <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">
                             <a href="#contato">Contact</a>
-                            <span class="h-0.5 w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
+                            <span class="h-0.5 w-[90%] lg:w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
                         </li>
                         <!-- Button SUN -->
                         <li class="cursor-pointer transition ease-in-out hover:scale-105 duration-300 group"><button class="border rounded-full border-gray-400 p-1 group-hover:bg-gray-500/20 hidden"><img class="w-7" src="assets/sun.png" alt=""></button></li>
@@ -209,7 +254,7 @@
                 }, 500)
             }
         </script>
-        <div id="infs-sec1" class="text-center">
+        <div id="infs-sec1" class="text-center z-[1000] relative">
             <!-- Texto-->
             <div class="">
                 <div class="text-white h-screen flex justify-center items-center">
@@ -219,7 +264,7 @@
                                 <h1 class="bg-gradient-to-r from-[#94032F]/50 via-[#CF0000]/50 to-[#AE0000]/50 border border-[#AE0000] rounded-full inline py-2 px-3">Kauan Cristian - Front-End</h1>
                                 <h1 class="text-4xl lg:text-7xl text-white lg:w-[950px] px-5 lg:px-0">Developing interfaces that <span class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent">delight</span></h1>
                             </div>
-                            <p id="typing" class="lg:w-[500px] text-gray-300 pt-5 text-center mx-auto px-8 lg:px-0">Front-End Developer specialized in UI/UX. I turn ideas into intuitive interfaces and memorable experiences, always focused on delivering the best for the user.</p>
+                            <p id="typing" class="md:w-[650px] lg:w-[500px] text-gray-300 pt-5 text-center mx-auto px-8 lg:px-0">Front-End Developer specialized in UI/UX. I turn ideas into intuitive interfaces and memorable experiences, always focused on delivering the best for the user.</p>
                             <div class="flex flex-col lg:flex-row justify-center items-center lg:space-x-3 mt-9 space-y-5 lg:space-y-0">
                                 <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-3 rounded-lg  transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse">
                                     <p>Browse my work</p>
@@ -466,10 +511,15 @@
             <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">Here you’ll find a selection of my completed works, each crafted with dedication and attention to detail. Every project showcases my commitment to quality, innovation, and efficient solutions tailored to meet each client’s unique needs.</p>
         </div>
 
-        <div id="projectsBox" class="px-6 md:px-12 lg:px-16 pt-8 relative">
-            <div class="grid lg:grid-cols-3 gap-16">
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]w-full sm:w-[75%] lg:w-full mx-auto">
-                    <div class="overflow-hidden w-full h-60">
+        <div id="projectsBox" class="flex items-center pt-8 relative px-4 lg:px-16 relative">
+            <div class="">
+                <button id="btnLeft" class="bg-[#262626]/40 py-4 px-5 rounded-full hover:bg-[#262626] transition ease-in-out duration-300 absolute top-1/2 -translate-y-1/2 left-2 z-[500] scaleBtn">
+                    <i class="bi bi-chevron-left text-white"></i>
+                </button>
+            </div>
+            <div id="carrosselProjects" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-16">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red] w-full sm:w-[75%] lg:w-[30%] lg:h-[540px] mx-auto flex-shrink-0 snap-center mx-auto">
+                    <div class="overflow-hidden w-full h-60 ">
                         <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/RestauranteFelix.png" alt="">
                     </div>
                         <div class="p-5 pb-8">
@@ -485,15 +535,16 @@
                         </div>
                 </div>
 
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]w-full sm:w-[75%] lg:w-full mx-auto">
-                    <div class="overflow-hidden w-full h-60">
-                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Cashew.png" alt="">
+
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red] w-full sm:w-[75%] lg:w-[30%] lg:h-[540px] mx-auto flex-shrink-0 snap-center mx-auto">
+                    <div class="overflow-hidden w-full h-60 ">
+                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/" alt="">
                     </div>
                         <div class="p-5 pb-8">
-                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Cashew</p>
-                            <p class="text-gray-200 pt-5 text-sm">At Cashew, we connect you to top-tier stays with smart, engaging promotions. Each experience is crafted with care, and our automatic PDF summaries ensure transparency and convenience from start to finish..</p>
+                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Felix Restaurant</p>
+                            <p class="text-gray-200 pt-5 text-sm">On our website, you can enjoy expertly crafted dishes and also receive an automatically generated PDF with detailed information about your payment transaction — ensuring transparency, security, and convenience for you.</p>
                             <div class="flex items-center justify-between">
-                                <a href="https://github.com/kauancristian/Cashew-Digital-Marketing"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
+                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
                                 <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
                                     <p>View Live</p>
                                     <i class="bi bi-eye text-lg"></i>
@@ -502,17 +553,15 @@
                         </div>
                 </div>
 
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]w-full sm:w-[75%] lg:w-full mx-auto">
-                    <div class="overflow-hidden w-full h-60">
-                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Ritmo.png" alt="">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red] w-full sm:w-[75%] lg:w-[30%] lg:h-[540px] mx-auto flex-shrink-0 snap-center mx-auto">
+                    <div class="overflow-hidden w-full h-60 ">
+                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/RestauranteFelix.png" alt="">
                     </div>
                         <div class="p-5 pb-8">
-                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Ritmo Musics</p>
-                            <p class="text-gray-200 pt-5 text-sm">Ritmo Musics brings you the sound that fits your vibe — with smooth streaming, smart playlists, and secure activity tracking for a complete listening experience.</p>
-
-                            <p class="text-gray-200 pt-5 text-sm">At Ritmo, music moves with you — anytime, anywhere.</p>
+                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Felix Restaurant</p>
+                            <p class="text-gray-200 pt-5 text-sm">On our website, you can enjoy expertly crafted dishes and also receive an automatically generated PDF with detailed information about your payment transaction — ensuring transparency, security, and convenience for you.</p>
                             <div class="flex items-center justify-between">
-                                <a href="https://github.com/kauancristian/Ritmo-Music"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
+                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
                                 <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
                                     <p>View Live</p>
                                     <i class="bi bi-eye text-lg"></i>
@@ -521,15 +570,16 @@
                         </div>
                 </div>
 
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red]w-full sm:w-[75%] lg:w-full mx-auto">
-                    <div class="overflow-hidden w-full h-60">
-                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Essenza.png" alt="">
+
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red] w-full sm:w-[75%] lg:w-[30%] lg:h-[540px] mx-auto flex-shrink-0 snap-center mx-auto">
+                    <div class="overflow-hidden w-full h-60 ">
+                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/RestauranteFelix.png" alt="">
                     </div>
                         <div class="p-5 pb-8">
-                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold">Essenza Imperiale</p>
-                            <p class="text-gray-200 pt-5 text-sm">At Essenza Imperiale, elegance meets precision in every detail. Explore refined jewelry pieces and enjoy a seamless shopping experience — with a secure cart system and detailed PDF receipts for every purchase.</p>
+                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Felix Restaurant</p>
+                            <p class="text-gray-200 pt-5 text-sm">On our website, you can enjoy expertly crafted dishes and also receive an automatically generated PDF with detailed information about your payment transaction — ensuring transparency, security, and convenience for you.</p>
                             <div class="flex items-center justify-between">
-                                <a href="https://github.com/kauancristian/Essenza_Imperiale"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
+                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
                                 <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
                                     <p>View Live</p>
                                     <i class="bi bi-eye text-lg"></i>
@@ -537,6 +587,30 @@
                             </div>
                         </div>
                 </div>
+
+
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red] w-full sm:w-[75%] lg:w-[30%] lg:h-[540px] mx-auto flex-shrink-0 snap-center mx-auto">
+                    <div class="overflow-hidden w-full h-60 ">
+                        <img class="w-full h-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/RestauranteFelix.png" alt="">
+                    </div>
+                        <div class="p-5 pb-8">
+                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Felix Restaurant</p>
+                            <p class="text-gray-200 pt-5 text-sm">On our website, you can enjoy expertly crafted dishes and also receive an automatically generated PDF with detailed information about your payment transaction — ensuring transparency, security, and convenience for you.</p>
+                            <div class="flex items-center justify-between">
+                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
+                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                    <p>View Live</p>
+                                    <i class="bi bi-eye text-lg"></i>
+                                </button>
+                            </div>
+                        </div>
+                </div>
+            </div>
+            <div class="">
+                <button id="btnRight" class="bg-[#262626]/40 py-4 px-5 rounded-full hover:bg-[#262626] transition ease-in-out duration-300 absolute top-1/2 -translate-y-1/2 right-2 z-[500] scaleBtn">
+                    <i class="bi bi-chevron-right text-white"></i>
+                </button>
+            </div>
         </div>
      </div>
 
@@ -770,6 +844,37 @@
             </div>
         </div>
      </footer>
+
+     <script>
+        const carrosselProjects = document.getElementById("carrosselProjects");
+        const btnLeft = document.getElementById("btnLeft");
+        const btnRight = document.getElementById("btnRight");
+        let scrollAmount = 0;
+
+        const itemWidth = carrosselProjects.children[0].offsetWidth;
+        
+        btnRight.onclick = () => {
+            if(scrollAmount >= carrosselProjects.scrollWidth - carrosselProjects.clientWidth) {
+                scrollAmount = 0;
+            } else{
+                scrollAmount += itemWidth;
+            };
+
+            carrosselProjects.scrollTo({left: scrollAmount, behavior: "smooth"})
+        };
+
+        btnLeft.onclick = () => {
+            if(scrollAmount <= 0) {
+                scrollAmount = carrosselProjects.scrollWidth - carrosselProjects.clientWidth;
+            } else{
+                scrollAmount -= itemWidth;
+            };
+
+            carrosselProjects.scrollTo({left:scrollAmount, behavior: "smooth"})
+        };
+     </script>
+
+
     <script src="https://unpkg.com/scrollreveal"></script>
      <script src="scroll,.js"></script>
 </body>
