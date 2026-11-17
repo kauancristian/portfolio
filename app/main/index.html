@@ -45,21 +45,12 @@
             overflow: hidden;
         }
 
-        .cloud-drift--hero {
-            z-index: 60;
-        }
-
-        .cloud-drift--hero .cloud {
-            opacity: 0.46;
-        }
-
         .cloud {
             position: absolute;
             left: 0;
             width: clamp(280px, 38vw, 540px);
             aspect-ratio: 3.2;
             opacity: 0.78;
-            filter: drop-shadow(0 10px 20px rgb(124 58 237 / 35%));
             animation: cloudDrift linear infinite;
             will-change: transform;
         }
@@ -132,10 +123,6 @@
 
         #skillsBox > div > div > div:hover {
             background: #1b1428 !important;
-        }
-
-        #sec1{
-            background: url(assets/bg-red.png);
         }
 
         h1, h2, li{
@@ -252,17 +239,6 @@
         .hero-cta:hover i {
             transform: translateX(3px);
         }
-
-        #infs-sec1 .hero-cta ~ a .btnBrowse {
-            font-size: 0.75rem !important;
-            line-height: 1rem !important;
-        }
-
-        #infs-sec1 .hero-cta ~ a .btnBrowse p {
-            font-size: inherit !important;
-            line-height: inherit !important;
-        }
-
 
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
@@ -425,38 +401,10 @@
 
         #sec1 {
             position: relative;
-            isolation: isolate;
             background-position: center;
             background-size: cover;
             background-image: none;
-            background-color: #6D28D9;
-            background-blend-mode: color;
-        }
-
-        #sec1::after {
-            content: "";
-            position: absolute;
-            inset: 0;
-            z-index: 0;
-            pointer-events: none;
-            background: url(assets/bg-red.png) center / cover no-repeat;
-            filter: hue-rotate(-90deg) saturate(0.9);
-        }
-
-        #sec1::before {
-            content: "";
-            position: absolute;
-            inset: 10% 12%;
-            z-index: 1;
-            pointer-events: none;
-            background: radial-gradient(ellipse, #A855F733, transparent 68%);
-            filter: blur(28px);
-            animation: auroraDrift 9s ease-in-out infinite alternate;
-        }
-
-        @keyframes auroraDrift {
-            from { transform: translate3d(-4%, 2%, 0) scale(0.9); }
-            to { transform: translate3d(4%, -2%, 0) scale(1.12); }
+            background-color: transparent;
         }
 
         #infs-sec1 h1:first-child {
@@ -561,6 +509,11 @@
         }
 
         @media (max-width: 1023px) {
+            #carrosselProjects::before,
+            #carrosselProjects::after {
+                display: none;
+            }
+
             #carrosselProjects > div > div:first-child {
                 height: 160px;
             }
@@ -568,6 +521,23 @@
             #carrosselProjects > div > div:first-child img {
                 height: 100%;
                 object-fit: contain;
+            }
+        }
+
+        @media (min-width: 640px) and (max-width: 1023px) {
+            #carrosselProjects::before,
+            #carrosselProjects::after {
+                content: "";
+                display: block;
+                flex: 0 0 12.5%;
+            }
+
+            #carrosselProjects::before {
+                margin-right: -1rem;
+            }
+
+            #carrosselProjects::after {
+                margin-left: -1rem;
             }
         }
 
@@ -639,24 +609,6 @@
 
         body.light-mode .cloud {
             opacity: 0.2;
-            filter: drop-shadow(0 8px 18px rgb(124 58 237 / 18%));
-        }
-
-        body.light-mode .cloud-drift--hero .cloud {
-            opacity: 0.16;
-        }
-
-        body.light-mode #sec1 {
-            background: linear-gradient(135deg, #f8f5ff, #eee5fb 55%, #e8ddf7) !important;
-        }
-
-        body.light-mode #sec1::after {
-            opacity: 0.08;
-        }
-
-        body.light-mode #sec1 > .bg-black {
-            background: #f8f5ff !important;
-            opacity: 0.58 !important;
         }
 
         body.light-mode header,
@@ -757,13 +709,11 @@
             color: #554b64 !important;
         }
 
-        body.light-mode #infs-sec1 button.btnBrowse,
-        body.light-mode #backToTop {
-            color: #fff !important;
-        }
-
-        body.light-mode #infs-sec1 a .btnBrowse {
-            color: #fff !important;
+        body.light-mode .btnBrowse.text-white,
+        body.light-mode .btnBrowse .text-white:not(.text-transparent),
+        body.light-mode .btnBrowse * {
+            color: #e5e7eb !important;
+            -webkit-text-fill-color: #e5e7eb !important;
         }
 
         body.light-mode .theme-toggle,
@@ -919,8 +869,7 @@
                 </div>
         </header>
 
-    <div id="sec1" class="min-h-screen shadow-lg shadow-[#A855F7]/30">
-        <div class="bg-black inset-0 absolute z-50 opacity-80"></div>
+    <div id="sec1" class="min-h-screen">
         <script>
             const siteHeader = document.getElementById("siteHeader");
             const btnMenu = document.getElementById("btnMenu");
@@ -957,15 +906,13 @@
                             </div>
                             <p id="typing" class="md:w-[650px] lg:w-[500px] text-gray-300 pt-5 text-center mx-auto px-8 lg:px-0">Full Stack Developer specialized in UI/UX. I turn ideas into intuitive interfaces and memorable experiences, always focused on delivering the best for the user.</p>
                             <div class="flex flex-col lg:flex-row justify-center items-center lg:space-x-3 mt-9 space-y-5 lg:space-y-0">
-                                <button class="hero-cta text-white bg-[#7C3AED] py-3 rounded-lg transition ease-in-out duration-300 flex justify-center items-center w-[200px] text-center cursor-pointer hover:translate-y-[-5px] btnBrowse">
+                                <a href="#projects" class="hero-cta text-white bg-[#7C3AED] py-3 rounded-lg transition ease-in-out duration-300 flex justify-center items-center w-[200px] text-center cursor-pointer hover:translate-y-[-5px] btnBrowse">
                                     <p>Browse my work</p>
                                     <i class="bi bi-arrow-right" aria-hidden="true"></i>
-                                </button>
-                                <a href="#contato">
-                                    <button class="text-white bg-[#7C3AED] border border-[#A855F7] py-3 rounded-lg transition ease-in-out duration-300 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] btnBrowse">
-                                        <p>Let's talk?</p>
-                                        <i class="bi bi-chat-dots transition ease-in-out duration-300"></i>
-                                    </button>
+                                </a>
+                                <a href="#contato" class="hero-cta text-white bg-[#7C3AED] border border-[#A855F7] py-3 rounded-lg transition ease-in-out duration-300 flex justify-center items-center w-[200px] text-center cursor-pointer hover:translate-y-[-5px] btnBrowse">
+                                    <p>Let's talk?</p>
+                                    <i class="bi bi-chat-dots transition ease-in-out duration-300"></i>
                                 </a>
                             </div>
 
@@ -1228,8 +1175,8 @@
                     <i class="bi bi-chevron-left text-white"></i>
                 </button>
             </div>
-            <div id="carrosselProjects" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-16">
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
+            <div id="carrosselProjects" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-4">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] flex-shrink-0 snap-center">
                     <div class="overflow-hidden w-full">
                         <img class="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/RestauranteFelix.png" alt="">
                     </div>
@@ -1247,7 +1194,7 @@
                 </div>
 
 
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] flex-shrink-0 snap-center">
                     <div class="overflow-hidden w-full">
                         <img class="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Cashew.png" alt="">
                     </div>
@@ -1264,7 +1211,7 @@
                         </div>
                 </div>
 
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] flex-shrink-0 snap-center">
                     <div class="overflow-hidden w-full">
                         <img class="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Essenza.png" alt="">
                     </div>
@@ -1282,7 +1229,7 @@
                 </div>
 
 
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] flex-shrink-0 snap-center">
                     <div class="overflow-hidden w-full">
                         <img class="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Drippin.png" alt="">
                     </div>
@@ -1300,7 +1247,7 @@
                 </div>
 
 
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] flex-shrink-0 snap-center">
                     <div class="overflow-hidden w-full">
                         <img class="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Ritmo.png" alt="">
                     </div>
@@ -1317,7 +1264,7 @@
                         </div>
                 </div>
 
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] flex-shrink-0 snap-center">
                     <div class="overflow-hidden w-full">
                         <img class="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/projetoSalaberga.png" alt="Portal Salaberga">
                     </div>
@@ -1579,6 +1526,13 @@
      </button>
 
      <script>
+        const browseMyWork = document.querySelector("#infs-sec1 a.hero-cta");
+        browseMyWork.addEventListener("click", (event) => {
+            event.preventDefault();
+            history.pushState(null, "", "#projects");
+            document.getElementById("projects").scrollIntoView({ behavior: "instant", block: "start" });
+        });
+
         const carrosselProjects = document.getElementById("carrosselProjects");
         const btnLeft = document.getElementById("btnLeft");
         const btnRight = document.getElementById("btnRight");
@@ -1587,13 +1541,18 @@
             if (!mobileProjectCarousel.matches) return;
 
             const cards = Array.from(carrosselProjects.children);
+            const carouselCenter = carrosselProjects.getBoundingClientRect().left + carrosselProjects.clientWidth / 2;
             const currentIndex = cards.reduce((closestIndex, card, index) => {
-                const currentDistance = Math.abs(cards[closestIndex].offsetLeft - carrosselProjects.scrollLeft);
-                const nextDistance = Math.abs(card.offsetLeft - carrosselProjects.scrollLeft);
+                const currentCard = cards[closestIndex].getBoundingClientRect();
+                const currentDistance = Math.abs(currentCard.left + currentCard.width / 2 - carouselCenter);
+                const nextCard = card.getBoundingClientRect();
+                const nextDistance = Math.abs(nextCard.left + nextCard.width / 2 - carouselCenter);
                 return nextDistance < currentDistance ? index : closestIndex;
             }, 0);
             const nextIndex = (currentIndex + direction + cards.length) % cards.length;
-            carrosselProjects.scrollTo({ left: cards[nextIndex].offsetLeft, behavior: "smooth" });
+            const nextCard = cards[nextIndex].getBoundingClientRect();
+            const left = carrosselProjects.scrollLeft + nextCard.left + nextCard.width / 2 - carouselCenter;
+            carrosselProjects.scrollTo({ left, behavior: "instant" });
         };
 
         btnRight.addEventListener("click", () => moveProjectCarousel(1));
@@ -1737,25 +1696,11 @@
 
         updateTheme(localStorage.getItem("portfolioTheme") || "dark");
         updateLanguage(portfolioLanguage);
-        const heroCloudLayer = document.querySelector(".cloud-drift").cloneNode(true);
-        heroCloudLayer.classList.add("cloud-drift--hero");
-        heroCloudLayer.querySelectorAll("linearGradient[id]").forEach((gradient, index) => {
-            const previousId = gradient.id;
-            const nextId = `heroCloudGradient${index + 1}`;
-            gradient.id = nextId;
-            heroCloudLayer.querySelectorAll(`[fill="url(#${previousId})"]`).forEach((shape) => {
-                shape.setAttribute("fill", `url(#${nextId})`);
-            });
-        });
-        document.querySelector("#sec1").prepend(heroCloudLayer);
         const startAtHome = () => {
             if (location.hash) history.replaceState(null, "", location.pathname + location.search);
             window.scrollTo(0, 0);
         };
         startAtHome();
-        window.addEventListener("load", () => {
-            requestAnimationFrame(() => requestAnimationFrame(startAtHome));
-        }, { once: true });
      </script>
 
 
