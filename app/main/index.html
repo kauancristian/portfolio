@@ -1,12 +1,16 @@
 <!DOCTYPE html>
-<html lang="pt-br">
+<html lang="pt-BR">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script>
+        if ("scrollRestoration" in history) history.scrollRestoration = "manual";
+        if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+    </script>
     <link rel="shortcut icon" href="assets/coroa.png" type="image/x-icon">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
-    <title>Kauan Cristian | Front-End Developer</title>
+    <title>Kauan Cristian | Full Stack Developer</title>
 
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Allura&family=Anton&family=Assistant:wght@200..800&family=Bangers&family=Bebas+Neue&family=Chakra+Petch:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&family=Exo+2:ital,wght@0,100..900;1,100..900&family=Lilita+One&family=Love+Ya+Like+A+Sister&family=Monsieur+La+Doulaise&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Outfit:wght@100..900&family=Oxanium:wght@200..800&family=Passion+One:wght@400;700;900&family=Pinyon+Script&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Smooch+Sans:wght@100..900&display=swap');
@@ -65,7 +69,7 @@
                 width: 0;
                 height: 2px;
                 background-origin: left;
-                background-image: linear-gradient(#94032F ,#CF0000 , #AE0000);
+                background-image: linear-gradient(#4C1D95 ,#7C3AED , #A855F7);
                 transition: width 0.5s;
             }
 
@@ -73,22 +77,19 @@
                 width: 100%;
             }
 
-            #menu{
-                display: block !important;
-            }
         }
 
         @keyframes animationImage {
             0%{
-                box-shadow: 1px 1px 0px #CF0000;
+                box-shadow: 1px 1px 0px #7C3AED;
             }
 
             50%{
-                box-shadow: 1px 1px 40px #CF0000;
+                box-shadow: 1px 1px 40px #7C3AED;
             }
 
             100%{
-                box-shadow: 1px 1px 0px #CF0000;
+                box-shadow: 1px 1px 0px #7C3AED;
             }
         }
 
@@ -112,26 +113,55 @@
             animation: slowSurge 1s ease-in-out;
         }
 
-        .btnBrowse{
-            position: relative;
-            overflow: hidden;
+        .btnBrowse {
+            background-color: #7C3AED !important;
+            background-image: none !important;
+            color: #fff !important;
+            transition: background-color 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.45s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.45s cubic-bezier(0.22, 1, 0.36, 1) !important;
         }
 
-        .btnBrowse::before{
-            content: '';
-            position: absolute;
-            height: 100%;
-            width: 75%;
-            top: 0;
-            left: -100%;
-            background-image: linear-gradient(120deg, transparent, #ffffff58, transparent);
-            transition: left 0.3s ease-in-out;
+        .btnBrowse:hover {
+            background-color: #6D28D9 !important;
         }
 
-        .btnBrowse:hover::before{
-            left: 100%;
+        .hero-cta {
+            gap: 0.875rem;
+            padding-inline: 0.75rem;
+            font-size: 0.75rem !important;
+            line-height: 1rem !important;
         }
-        
+
+        .hero-cta p {
+            flex: 0 1 auto;
+            min-width: 0;
+            font-size: inherit !important;
+            line-height: inherit !important;
+            white-space: nowrap;
+            text-align: center;
+        }
+
+        .hero-cta i {
+            flex: 0 0 auto;
+            font-size: 0.875rem;
+            transition: transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .hero-cta:hover i {
+            transform: translateX(3px);
+        }
+
+        #infs-sec1 .hero-cta ~ a .btnBrowse {
+            font-size: 0.75rem !important;
+            line-height: 1rem !important;
+        }
+
+        #infs-sec1 .hero-cta ~ a .btnBrowse p {
+            font-size: inherit !important;
+            line-height: inherit !important;
+        }
+
 
         .scrollbar-hide::-webkit-scrollbar {
             display: none;
@@ -151,7 +181,7 @@
             content: "";
             position: absolute;
             inset: 0;
-            background-color: #ae000020;
+            background-color: #a855f720;
             transform: scale(1);
             border-radius: inherit;
             z-index: -1;
@@ -174,36 +204,459 @@
                 transform: scale(1.5);
                 opacity: 1;
             }
+
+        }
+
+        body {
+            transition: background-color 0.5s ease, color 0.5s ease;
+        }
+
+        .site-header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            z-index: 10001;
+            width: 100%;
+            padding: 1rem 1rem 0;
+            pointer-events: none;
+        }
+
+        .site-header__bar {
+            pointer-events: auto;
+        }
+
+        .site-header__bar {
+            position: relative;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            width: min(100%, 1024px);
+            min-height: 58px;
+            margin: 0 auto;
+            padding: 0 1.25rem;
+            border: 1px solid rgb(148 163 184 / 16%);
+            border-radius: 9999px;
+            background: rgb(15 23 42 / 82%);
+            box-shadow: 0 12px 35px rgb(3 7 18 / 20%);
+            backdrop-filter: blur(18px);
+            -webkit-backdrop-filter: blur(18px);
+        }
+
+        .site-header__brand {
+            display: flex;
+            flex: 0 0 auto;
+            align-items: center;
+            gap: 0.625rem;
+            color: #f8fafc;
+            font-weight: 600;
+            text-decoration: none;
+        }
+
+        .site-header__brand img {
+            width: 2rem;
+            height: 2rem;
+            object-fit: contain;
+        }
+
+        .site-header__nav {
+            flex: 1;
+            margin: 0 1.5rem;
+        }
+
+        .site-header__links {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: clamp(1rem, 3vw, 2.5rem);
+            color: #d1d5db;
+            font-size: 1rem;
+        }
+
+        .site-header__links a {
+            color: inherit;
+            text-decoration: none;
+            transition: color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .site-header__links a:hover,
+        .site-header__links a:focus-visible {
+            color: #c4b5fd;
+        }
+
+        .site-header__actions {
+            display: flex;
+            flex: 0 0 auto;
+            align-items: center;
+            gap: 0.5rem;
+        }
+
+        .site-header .theme-toggle,
+        .site-header .language-toggle {
+            display: inline-flex;
+            min-width: 2.75rem;
+            align-items: center;
+            justify-content: center;
+            border-color: rgb(148 163 184 / 25%);
+            color: #f8fafc;
+        }
+
+        .site-header .language-toggle {
+            border-color: rgb(124 58 237 / 75%);
+            padding: 0.4rem 0.75rem;
+        }
+
+        .site-header__menu-button {
+            display: none;
+            align-items: center;
+            justify-content: center;
+            width: 2.5rem;
+            height: 2.5rem;
+            border: 1px solid rgb(148 163 184 / 25%);
+            border-radius: 50%;
+            background: transparent;
+            color: #f8fafc;
+            font-size: 1.25rem;
+        }
+
+        img[src="assets/logoPort.png"] {
+            filter: hue-rotate(-90deg) saturate(0.9);
+        }
+
+        #sec1 {
+            position: relative;
+            isolation: isolate;
+            background-position: center;
+            background-size: cover;
+            background-image: none;
+            background-color: #6D28D9;
+            background-blend-mode: color;
+        }
+
+        #sec1::after {
+            content: "";
+            position: absolute;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            background: url(assets/bg-red.png) center / cover no-repeat;
+            filter: hue-rotate(-90deg) saturate(0.9);
+        }
+
+        #sec1::before {
+            content: "";
+            position: absolute;
+            inset: 10% 12%;
+            z-index: 1;
+            pointer-events: none;
+            background: radial-gradient(ellipse, #A855F733, transparent 68%);
+            filter: blur(28px);
+            animation: auroraDrift 9s ease-in-out infinite alternate;
+        }
+
+        @keyframes auroraDrift {
+            from { transform: translate3d(-4%, 2%, 0) scale(0.9); }
+            to { transform: translate3d(4%, -2%, 0) scale(1.12); }
+        }
+
+        #infs-sec1 h1:first-child {
+            display: inline-block;
+            animation: badgeFloat 4s ease-in-out infinite;
+        }
+
+        @keyframes badgeFloat {
+            0%, 100% { transform: translateY(0); }
+            50% { transform: translateY(-7px); }
+        }
+
+        #infs-sec1 h1:nth-child(2) {
+            animation: headlineReveal 1s cubic-bezier(.2, .8, .2, 1) both;
+        }
+
+        @keyframes headlineReveal {
+            from { opacity: 0; transform: translateY(28px) scale(.97); filter: blur(8px); }
+            to { opacity: 1; transform: translateY(0) scale(1); filter: blur(0); }
+        }
+
+        #myImage {
+            animation: animationImage 6s ease-in-out infinite, portraitFloat 5s ease-in-out infinite;
+        }
+
+        @keyframes portraitFloat {
+            0%, 100% { transform: translateY(0) rotate(-1deg); }
+            50% { transform: translateY(-12px) rotate(1deg); }
+        }
+
+        #projectsBox > div > div:hover {
+            transform: translateY(-8px) rotateX(1deg);
+            box-shadow: 0 18px 45px #7C3AED22;
+        }
+
+        #projectsBox > div > div {
+            transition: transform 0.65s cubic-bezier(0.22, 1, 0.36, 1),
+                box-shadow 0.65s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        #skillsBox > div > div > div {
+            transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.5s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        .theme-toggle,
+        .language-toggle {
+            border: 1px solid #A855F766;
+            border-radius: 9999px;
+            padding: 0.45rem 0.75rem;
+            color: #e5e7eb;
+            transition: background-color 0.25s ease, transform 0.25s ease, border-color 0.25s ease;
+        }
+
+        .theme-toggle:hover,
+        .language-toggle:hover {
+            background: #A855F722;
+            transform: translateY(-2px);
+        }
+
+        .theme-toggle,
+        .language-toggle {
+            transition: background-color 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+                border-color 0.4s cubic-bezier(0.22, 1, 0.36, 1);
+        }
+
+        #backToTop {
+            position: fixed;
+            right: 1.25rem;
+            bottom: 1.25rem;
+            z-index: 10000;
+            width: 3.25rem;
+            height: 3.25rem;
+            border: 1px solid #c084fc;
+            border-radius: 9999px;
+            color: #fff;
+            background: #7C3AED;
+            box-shadow: 0 0 24px #7C3AED66;
+            opacity: 0;
+            visibility: hidden;
+            transform: translateY(12px);
+            transition: opacity 0.25s ease, visibility 0.25s ease, transform 0.25s ease;
+        }
+
+        #backToTop.is-visible {
+            opacity: 1;
+            visibility: visible;
+            transform: translateY(0);
+        }
+
+        #backToTop:hover {
+            background: #6D28D9;
+        }
+
+        body.light-mode {
+            background: #f7f4fc !important;
+            color: #251b35;
+        }
+
+        body.light-mode #sec1 {
+            background: linear-gradient(135deg, #f8f5ff, #eee5fb 55%, #e8ddf7) !important;
+        }
+
+        body.light-mode #sec1::after {
+            opacity: 0.08;
+        }
+
+        body.light-mode #sec1 > .bg-black {
+            background: #f8f5ff !important;
+            opacity: 0.58 !important;
+        }
+
+        body.light-mode header,
+        body.light-mode nav.bg-black,
+        body.light-mode .bg-black\/90 {
+            background-color: rgb(250 248 255 / 92%) !important;
+        }
+
+        body.light-mode .site-header__bar {
+            border-color: rgb(124 58 237 / 18%);
+            background: rgb(250 248 255 / 88%);
+        }
+
+        body.light-mode .site-header__brand,
+        body.light-mode .site-header__links,
+        body.light-mode .site-header__menu-button {
+            color: #271d38;
+        }
+
+        body.light-mode .site-header__links a:hover,
+        body.light-mode .site-header__links a:focus-visible {
+            color: #6d28d9;
+        }
+
+        body.light-mode .site-header .theme-toggle {
+            color: #6d28d9 !important;
+        }
+
+        body.light-mode .bg-black {
+            background-color: #f0ebf8 !important;
+        }
+
+        body.light-mode [class*="bg-[#121212]"],
+        body.light-mode [class*="bg-[#1c1c1c]"] {
+            background-color: rgb(255 255 255 / 88%) !important;
+        }
+
+        body.light-mode #boxsAbout > div,
+        body.light-mode #carrosselProjects > div,
+        body.light-mode #skillsBox > div > div > div,
+        body.light-mode #boxCode,
+        body.light-mode #contactMe {
+            background-color: #fff !important;
+            background-image: none !important;
+            border-color: #d8cde8 !important;
+            box-shadow: 0 12px 30px rgb(52 32 82 / 10%);
+        }
+
+        body.light-mode #boxsAbout > div > div:last-child,
+        body.light-mode #carrosselProjects > div > div:last-child,
+        body.light-mode #contactMe p,
+        body.light-mode #boxCode > div {
+            color: #382d48;
+        }
+
+        body.light-mode #boxsAbout .text-gray-200,
+        body.light-mode #carrosselProjects .text-gray-200,
+        body.light-mode #contactMe .text-gray-200 {
+            color: #4b4357 !important;
+        }
+
+        body.light-mode #skillsBox > div > div > div {
+            border-color: #d8cde8 !important;
+        }
+
+        body.light-mode img[src*="github.png"] {
+            filter: brightness(0);
+        }
+
+        body.light-mode .bi-github {
+            background-image: none !important;
+            background-clip: border-box !important;
+            -webkit-text-fill-color: #111827 !important;
+            color: #111827 !important;
+        }
+
+        body.light-mode [class*="border-[#262626]"],
+        body.light-mode .border-gray-900 {
+            border-color: #ded5ea !important;
+        }
+
+        body.light-mode .text-white:not(.text-transparent) {
+            color: #271d38 !important;
+        }
+
+        body.light-mode .text-gray-200,
+        body.light-mode .text-gray-300,
+        body.light-mode .text-gray-400 {
+            color: #554b64 !important;
+        }
+
+        body.light-mode #infs-sec1 button.btnBrowse,
+        body.light-mode #backToTop {
+            color: #fff !important;
+        }
+
+        body.light-mode #infs-sec1 a .btnBrowse {
+            color: #5b21b6 !important;
+        }
+
+        body.light-mode .theme-toggle,
+        body.light-mode .language-toggle {
+            border-color: #7C3AED88;
+            color: #6d28d9 !important;
+        }
+
+        @media (prefers-reduced-motion: reduce) {
+            *,
+            *::before,
+            *::after {
+                scroll-behavior: auto !important;
+                animation-duration: 0.01ms !important;
+                animation-iteration-count: 1 !important;
+                transition-duration: 0.01ms !important;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            .site-header {
+                padding: 0.75rem 0.75rem 0;
+            }
+
+            .site-header__bar {
+                min-height: 56px;
+                padding: 0 0.75rem 0 1rem;
+            }
+
+            .site-header__nav {
+                display: none;
+                position: absolute;
+                top: calc(100% + 0.5rem);
+                right: 0;
+                left: 0;
+                margin: 0;
+                padding: 0.75rem;
+                border: 1px solid rgb(148 163 184 / 18%);
+                border-radius: 1.25rem;
+                background: rgb(15 23 42 / 96%);
+                box-shadow: 0 16px 35px rgb(3 7 18 / 28%);
+                backdrop-filter: blur(18px);
+                -webkit-backdrop-filter: blur(18px);
+            }
+
+            .site-header.menu-open .site-header__nav {
+                display: block;
+            }
+
+            .site-header__links {
+                align-items: stretch;
+                flex-direction: column;
+                gap: 0;
+                font-size: 1rem;
+            }
+
+            .site-header__links li {
+                display: block;
+            }
+
+            .site-header__links a {
+                display: block;
+                padding: 0.75rem 0.85rem;
+            }
+
+            .site-header__links span {
+                display: none !important;
+            }
+
+            .site-header__menu-button {
+                display: inline-flex;
+            }
+
+            body.light-mode .site-header__nav {
+                border-color: rgb(124 58 237 / 18%);
+                background: rgb(250 248 255 / 98%);
+            }
         }
 
     </style>
 </head>
-<body class="bg-[#050304]">
+<body class="bg-[#090510]">
     <!-- Sec 1 - Home -->   
-    <div id="sec1" class="min-h-screen shadow-lg shadow-[#AE0000]/30">
-        <div class="bg-black inset-0 absolute z-50 opacity-80"></div>
-        <header class="h-[70px] border-b border-[#262626] flex lg:justify-between lg:items-center bg-black/90 fixed w-screen z-[9999] top-0">
-            <!-- Btn Menu -->
-            <div class="w-screen absolute lg:hidden">
-                <div class="flex justify-end">
-                        <i tabindex="0" id="btnMenu" class="bi bi-list text-gray-200 absolute text-2xl py-4 px-5 focus:text-[#AE0000] transition ease-in-out duration-300"></i>
-                </div>
-            </div>
-
-            <div class="lg:ml-9">
-                <div class="absolute flex space-x-2 items-center translate-y-1 lg:translate-y-[-30px]">
-                    <img class="w-16" src="assets/logoPort.png" alt="">
-                    <h1 id="p1" class="text-white font-bold text-xl lg:text-2xl hidden lg:block">Kauan Cristian</h1>
-                </div>
-            </div>
-            <div id="menu" class="hidden lg:block translate-x-[-100%] lg:translate-x-0 transition-all ease-in-out duration-500">
-                <nav class="bg-black lg:bg-transparent h-screen w-[60vw] lg:h-full lg:w-full flex lg:justify-end z-[9999] relative p-5 lg:p-0 text-lg flex-col lg:flex-row border-r lg:border-r-none border-r-[#AE0000]">
-                    <!-- !! -->
-                    <div class="lg:hidden flex items-center justify-between pb-12 pt-3">
-                        <p class="text-xl font-bold bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent">Menu</p>
-                        <i tabindex="0" id="btnClose" class="bi bi-x-lg text-xl text-gray-200 font-bold focus:text-[#AE0000] transition ease-in-out duration-300"></i>
-                    </div>
-                    <ul class="flex flex-col lg:flex-row lg:justify-end space-y-5 lg:space-y-0 lg:space-x-5 text-gray-400 lg:items-center">
+    <header id="siteHeader" class="site-header">
+            <div class="site-header__bar">
+                <a class="site-header__brand" href="#sec1" aria-label="Kauan Cristian - início">
+                    <img src="assets/logoPort.png" alt="">
+                    <span>Kauan Cristian</span>
+                </a>
+                <nav id="menu" class="site-header__nav" aria-label="Navegação principal">
+                    <ul class="site-header__links">
                         <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline">
                             <a href="#sec1">Home</a>
                             <span class="h-0.5 w-[90%] lg:w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
@@ -225,35 +678,44 @@
                             <a href="#contato">Contact</a>
                             <span class="h-0.5 w-[90%] lg:w-[300px] block bg-[#262626] flex justify-center lg:hidden"></span>
                         </li>
-                        <!-- Button SUN -->
-                        <li class="cursor-pointer transition ease-in-out hover:scale-105 duration-300 group"><button class="border rounded-full border-gray-400 p-1 group-hover:bg-gray-500/20 hidden"><img class="w-7" src="assets/sun.png" alt=""></button></li>
-                        <!-- Button Language -->
-                        <li class="cursor-pointer nav-bar hover:text-white transition ease-in-out duration-500 flex flex-col space-y-3 lg:space-y-0 inline hidden lg:block"><button></button></li>
                     </ul>
                 </nav>
-            </div>
+                <div class="site-header__actions">
+                    <button id="themeToggle" class="theme-toggle" type="button" aria-label="Ativar tema claro" title="Ativar tema claro">
+                        <i id="themeIcon" class="bi bi-sun-fill" aria-hidden="true"></i>
+                    </button>
+                    <button id="languageToggle" class="language-toggle font-semibold text-sm" type="button" aria-label="Mudar idioma para português" title="Mudar idioma para português">PT</button>
+                    <button id="btnMenu" class="site-header__menu-button" type="button" aria-label="Abrir menu" aria-controls="menu" aria-expanded="false">
+                        <i class="bi bi-list" aria-hidden="true"></i>
+                    </button>
+                </div>
         </header>
 
+    <div id="sec1" class="min-h-screen shadow-lg shadow-[#A855F7]/30">
+        <div class="bg-black inset-0 absolute z-50 opacity-80"></div>
         <script>
+            const siteHeader = document.getElementById("siteHeader");
             const btnMenu = document.getElementById("btnMenu");
             const menu = document.getElementById("menu");
-            const btnClose = document.getElementById("btnClose");
-
-            btnMenu.onclick = () => {
-                menu.style.display = "block";
-
-                setTimeout(() => {
-                    menu.style.transform = "translateX(0%)";
-                }, 10)
+            const setMenuOpen = (isOpen) => {
+                siteHeader.classList.toggle("menu-open", isOpen);
+                btnMenu.setAttribute("aria-expanded", String(isOpen));
+                btnMenu.setAttribute("aria-label", isOpen ? "Fechar menu" : "Abrir menu");
+                btnMenu.innerHTML = `<i class="bi ${isOpen ? "bi-x-lg" : "bi-list"}" aria-hidden="true"></i>`;
             };
 
-            btnClose.onclick = () => {
-                menu.style.transform = "translateX(-100%)";
-
-                setTimeout(() => {
-                    menu.style.display = "none";
-                }, 500)
-            }
+            btnMenu.addEventListener("click", () => {
+                setMenuOpen(!siteHeader.classList.contains("menu-open"));
+            });
+            menu.querySelectorAll("a").forEach((link) => {
+                link.addEventListener("click", () => setMenuOpen(false));
+            });
+            document.addEventListener("keydown", (event) => {
+                if (event.key === "Escape") setMenuOpen(false);
+            });
+            window.addEventListener("resize", () => {
+                if (window.innerWidth >= 1024) setMenuOpen(false);
+            });
         </script>
         <div id="infs-sec1" class="text-center z-[1000] relative">
             <!-- Texto-->
@@ -262,17 +724,17 @@
                     <div class="transform translate-y-8">
                         <div>
                             <div class="font-semibold space-y-7">
-                                <h1 class="bg-gradient-to-r from-[#94032F]/50 via-[#CF0000]/50 to-[#AE0000]/50 border border-[#AE0000] rounded-full inline py-2 px-3">Kauan Cristian - Front-End</h1>
-                                <h1 class="text-4xl lg:text-7xl text-white lg:w-[950px] px-5 lg:px-0">Developing interfaces that <span class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent">delight</span></h1>
+                                <h1 class="bg-gradient-to-r from-[#4C1D95]/50 via-[#7C3AED]/50 to-[#A855F7]/50 border border-[#A855F7] rounded-full inline py-2 px-3">Kauan Cristian - Full Stack</h1>
+                                <h1 class="text-4xl lg:text-7xl text-white lg:w-[950px] px-5 lg:px-0">Developing interfaces that <span class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent">delight</span></h1>
                             </div>
-                            <p id="typing" class="md:w-[650px] lg:w-[500px] text-gray-300 pt-5 text-center mx-auto px-8 lg:px-0">Front-End Developer specialized in UI/UX. I turn ideas into intuitive interfaces and memorable experiences, always focused on delivering the best for the user.</p>
+                            <p id="typing" class="md:w-[650px] lg:w-[500px] text-gray-300 pt-5 text-center mx-auto px-8 lg:px-0">Full Stack Developer specialized in UI/UX. I turn ideas into intuitive interfaces and memorable experiences, always focused on delivering the best for the user.</p>
                             <div class="flex flex-col lg:flex-row justify-center items-center lg:space-x-3 mt-9 space-y-5 lg:space-y-0">
-                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-3 rounded-lg  transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse">
+                                <button class="hero-cta text-white bg-[#7C3AED] py-3 rounded-lg transition ease-in-out duration-300 flex justify-center items-center w-[200px] text-center cursor-pointer hover:translate-y-[-5px] btnBrowse">
                                     <p>Browse my work</p>
-                                    <i class="bi bi-arrow-right group-hover:translate-x-2 transition ease-in-out duration-300"></i>
+                                    <i class="bi bi-arrow-right" aria-hidden="true"></i>
                                 </button>
                                 <a href="#contato">
-                                    <button class="text-white bg-transparent border border-[#AE0000] py-3 rounded-lg transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:bg-[#AE0000]/20 hover:translate-y-[-5px] ease-in-out duration-150 btnBrowse">
+                                    <button class="text-white bg-[#7C3AED] border border-[#A855F7] py-3 rounded-lg transition ease-in-out duration-300 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] btnBrowse">
                                         <p>Let's talk?</p>
                                         <i class="bi bi-chat-dots transition ease-in-out duration-300"></i>
                                     </button>
@@ -282,10 +744,10 @@
                             <div id="icoLinks" class="mt-9 relative z-10">
                                 <div class="space-x-3">
                                     <button class="transform hover:translate-y-[-4px] transition ease-in-out duration-500">
-                                        <i class="bi bi-github text-[#AE0000] border border-[#AE0000] py-3 px-[15px] rounded-full cursor-pointer hover:bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] hover:text-white ease-in-out duration-300"></i>
+                                        <i class="bi bi-github text-[#A855F7] border border-[#A855F7] py-3 px-[15px] rounded-full cursor-pointer hover:bg-[#7C3AED] hover:text-white ease-in-out duration-300"></i>
                                     </button>
                                     <button class="transform hover:translate-y-[-4px] transition ease-in-out duration-500">
-                                         <i class="bi bi-instagram text-[#AE0000] border border-[#AE0000] py-3 px-[15px] rounded-full cursor-pointer hover:bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] hover:text-white ease-in-out duration-300"></i>
+                                         <i class="bi bi-instagram text-[#A855F7] border border-[#A855F7] py-3 px-[15px] rounded-full cursor-pointer hover:bg-[#7C3AED] hover:text-white ease-in-out duration-300"></i>
                                     </button>
                                 </div>
                             </div>
@@ -302,8 +764,8 @@
      <div id="sec2" class="pt-20 pb-10">
         <div>
             <div id="aboutMe" class="flex flex-col justify-center items-center">
-                <h1 class="bg-gradient-to-r from-[#94032F]/50 via-[#CF0000]/50 to-[#AE0000]/50 border border-[#AE0000] rounded-full inline py-2 px-3 text-white">ABOUT ME</h1>
-                <h2 class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Who am I?</h2>
+                <h1 class="bg-gradient-to-r from-[#4C1D95]/50 via-[#7C3AED]/50 to-[#A855F7]/50 border border-[#A855F7] rounded-full inline py-2 px-3 text-white">ABOUT ME</h1>
+                <h2 class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Who am I?</h2>
             </div>
             <p id="textAbout" class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">Learn a little more about me, my acquired knowledge, my journey, and my goals. And, of course, my love for web development.</p>
         </div>
@@ -316,44 +778,44 @@
                 <div class="flex flex-col justify-center items-center space-y-5">
                     <div class="text-white text-center flex justify-center lg:items-center mt-40 lg:mt-0">
                         <div class="lg:translate-y-[-10px]">
-                            <div id="myImage" class="bg-gradient-to-r from-[#F70000] via-[#CF0000] to-[#AE0000] p-[5px] rounded-full w-fit">
+                            <div id="myImage" class="bg-gradient-to-r from-[#C084FC] via-[#7C3AED] to-[#A855F7] p-[5px] rounded-full w-fit">
                                 <img class="object-cover rounded-full w-64 h-64 bg-[#262626] p-2" src="assets/eu.png" alt="">
                             </div>
                         </div>
                     </div>
                     <div>
-                        <h2 class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl font-semibold">DEV.KAUAN</h2>
+                        <h2 class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent text-5xl font-semibold">DEV.KAUAN</h2>
                     </div>
                 </div>
 
                 <!-- Boxs -->
                 <div id="boxsAbout" class="grid lg:grid-rows-3 gap-20 lg:gap-10 px-10 pt-20 lg:pt-0">
-                    <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#AE0000]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002] w-[100%] sm:w-[500px] lg:w-full">
+                    <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#A855F7]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#9333EA] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#7C3AED] w-[100%] sm:w-[500px] lg:w-full">
                         <div class="flex items-center space-x-2">
-                            <i class="bi bi-person-circle text-[#C20000]"></i>
-                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">Who am I?</p>
+                            <i class="bi bi-person-circle text-[#A855F7]"></i>
+                            <p class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent font-semibold text-xl">Who am I?</p>
                         </div>
 
                         <div class="text-gray-200 pt-5 text-sm">
-                            <p>I'm Kauan Cristian, a passionate and confident Front-End Developer. I love learning, solving problems, and creating interactive, user-friendly web experiences. My goal is to turn ideas into smooth, modern, and meaningful interfaces.</p>
+                            <p>I'm Kauan Cristian, a passionate and confident Full Stack Developer. I love learning, solving problems, and creating interactive, user-friendly web experiences. My goal is to turn ideas into smooth, modern, and meaningful interfaces.</p>
                         </div>
                     </div>
 
-                    <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#AE0000]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002] w-[100%] sm:w-[500px] lg:w-full">
+                    <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#A855F7]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#9333EA] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#7C3AED] w-[100%] sm:w-[500px] lg:w-full">
                         <div class="flex items-center space-x-2">
-                            <i class="bi bi-rocket-takeoff text-[#C20000]"></i>
-                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">My goal</p>
+                            <i class="bi bi-rocket-takeoff text-[#A855F7]"></i>
+                            <p class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent font-semibold text-xl">My goal</p>
                         </div>
 
                         <div class="text-gray-200 pt-5 text-sm">
-                            <p>My goal is to be the best at what I do, creating user interfaces and digital solutions that offer the best experience. I strive to improve daily, learning and staying updated with the latest technologies. I deliver not just software, but intuitive, efficient, and modern experiences, always staying at the forefront of Front-End development.</p>
+                            <p>My goal is to be the best at what I do, creating user interfaces and digital solutions that offer the best experience. I strive to improve daily, learning and staying updated with the latest technologies. I deliver not just software, but intuitive, efficient, and modern experiences, always staying at the forefront of Full Stack development.</p>
                         </div>
                     </div>
                     
-                    <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#AE0000]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#AE0306] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#CC0002] w-[100%] sm:w-[500px] lg:w-full">
+                    <div class="mx-auto bg-gradient-to-br from-[#121212]/90 via-[#1c1c1c]/90 to-[#A855F7]/10 px-5 pt-5 rounded-md border-t-[4px] border-t-[#9333EA] pb-4 relative hover:translate-y-[-5px] hover:bg-[#121212]/90 transition ease-in-out duration-300 hover:shadow-md hover:shadow-[#7C3AED] w-[100%] sm:w-[500px] lg:w-full">
                         <div class="flex items-center space-x-2">
-                            <i class="bi bi-chat-heart-fill text-[#C20000]"></i>
-                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold text-xl">What do I follow</p>
+                            <i class="bi bi-chat-heart-fill text-[#A855F7]"></i>
+                            <p class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent font-semibold text-xl">What do I follow</p>
                         </div>
 
                         <div class="text-gray-200 pt-5 text-sm">
@@ -369,8 +831,8 @@
             <!-- Sec 3 - Skills -->
             <div id="sec3" class="pt-32 px-10">
                 <div class="mx-auto flex flex-col justify-center items-center">
-                    <h1 class="bg-gradient-to-r from-[#94032F]/50 via-[#CF0000]/50 to-[#AE0000]/50 border border-[#AE0000] rounded-full inline py-2 px-3 text-white">MY SKILLS</h1>
-                    <h2 class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5 leading-tight">My technology stacks</h2>
+                    <h1 class="bg-gradient-to-r from-[#4C1D95]/50 via-[#7C3AED]/50 to-[#A855F7]/50 border border-[#A855F7] rounded-full inline py-2 px-3 text-white">MY SKILLS</h1>
+                    <h2 class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5 leading-tight">My technology stacks</h2>
 
                     <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">These are the main technologies and tools I use to build modern, responsive, and functional interfaces.</p>
 
@@ -379,7 +841,7 @@
 
                             <!-- Skill 1 -->
                             <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
-                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d]">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#4C1D95]/20 via-[#7C3AED]/20 to-[#A855F7]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d]">
                                     <div class="flex flex-col justify-center items-center translate-y-[-10px]">
                                         <img class="w-20 object-cover" src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/html5/html5-original.svg" alt="">
                                         <h2 class="text-white font-semibold translate-y-3">HTML 5</h2>
@@ -389,7 +851,7 @@
 
                             <!-- Skill 2 -->
                             <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
-                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#4C1D95]/20 via-[#7C3AED]/20 to-[#A855F7]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/css3/css3-original.svg" alt="">
                                         <h2 class="text-white font-semibold translate-y-1">CSS 3</h2>
@@ -399,7 +861,7 @@
 
                              <!-- Skill 3 -->
                             <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
-                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#4C1D95]/20 via-[#7C3AED]/20 to-[#A855F7]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/javascript/javascript-original.svg" alt="">
                                         <h2 class="text-white font-semibold translate-y-1">JavaScript</h2>
@@ -409,7 +871,7 @@
 
                              <!-- Skill 4 -->
                             <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
-                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#4C1D95]/20 via-[#7C3AED]/20 to-[#A855F7]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/tailwindcss/tailwindcss-original.svg" alt="">
                                         <h2 class="text-white font-semibold ">Tailwind CSS</h2>
@@ -419,7 +881,7 @@
 
                              <!-- Skill 5 -->
                             <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
-                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#4C1D95]/20 via-[#7C3AED]/20 to-[#A855F7]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/react/react-original.svg" alt="">
                                         <h2 class="text-white font-semibold ">React</h2>
@@ -429,7 +891,7 @@
 
                              <!-- Skill 6 -->
                             <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
-                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#4C1D95]/20 via-[#7C3AED]/20 to-[#A855F7]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/bootstrap/bootstrap-original.svg" alt="">
                                         <h2 class="text-white font-semibold">Bootstrap</h2>
@@ -439,7 +901,7 @@
 
                              <!-- Skill 7 -->
                             <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
-                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#4C1D95]/20 via-[#7C3AED]/20 to-[#A855F7]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-20" src="https://www.netdevices.fr/wp-content/uploads/2018/12/logo_sass-6.png" alt="">
                                         <h2 class="text-white font-semibold translate-y-2">Sass</h2>
@@ -449,7 +911,7 @@
 
                             <!-- Skill 8 -->
                             <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
-                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#4C1D95]/20 via-[#7C3AED]/20 to-[#A855F7]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/figma/figma-original.svg" alt="">
                                         <h2 class="text-white font-semibold translate-y-1">Figma</h2>
@@ -459,7 +921,7 @@
 
                             <!-- Skill 9 -->
                             <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
-                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#4C1D95]/20 via-[#7C3AED]/20 to-[#A855F7]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-20" src="https://cdn.jsdelivr.net/npm/simple-icons@v13/icons/canva.svg" alt="">
                                         <h2 class="text-white font-semibold translate-y-[1px]">Canva</h2>
@@ -469,7 +931,7 @@
 
                             <!-- Skill 10 -->
                             <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
-                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#4C1D95]/20 via-[#7C3AED]/20 to-[#A855F7]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/git/git-original.svg" alt="">
                                         <h2 class="text-white font-semibold translate-y-1">Git</h2>
@@ -479,7 +941,7 @@
 
                             <!-- Skill 11 -->
                             <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
-                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#4C1D95]/20 via-[#7C3AED]/20 to-[#A855F7]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-24" src="https://img.icons8.com/ios11/512/FFFFFF/github.png" alt="">
                                         <h2 class="text-white font-semibold translate-y-3">GitHub</h2>
@@ -489,7 +951,7 @@
 
                             <!-- Skill 12 -->
                             <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
-                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#94032F]/20 via-[#CF0000]/20 to-[#AE0000]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
+                                <div class="relative bg-[#121212]/80 w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 hover:bg-gradient-to-r from-[#4C1D95]/20 via-[#7C3AED]/20 to-[#A855F7]/20 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d] ">
                                     <div class="flex flex-col justify-center items-center">
                                         <img class="w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/nodejs/nodejs-original.svg" alt="">
                                         <h2 class="text-white font-semibold translate-y-[1px]">Node.js</h2>
@@ -506,8 +968,8 @@
      <!-- Projects -->
     <div id="projects" class="pt-16">
         <div class="flex flex-col justify-center items-center">
-            <h1 class="bg-gradient-to-r from-[#94032F]/50 via-[#CF0000]/50 to-[#AE0000]/50 border border-[#AE0000] rounded-full inline py-2 px-3 text-white">PROJECTS</h1>
-            <h2 class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5 leading-tight px-6 lg:px-0">Developed by me</h2>
+            <h1 class="bg-gradient-to-r from-[#4C1D95]/50 via-[#7C3AED]/50 to-[#A855F7]/50 border border-[#A855F7] rounded-full inline py-2 px-3 text-white">PROJECTS</h1>
+            <h2 class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5 leading-tight px-6 lg:px-0">Developed by me</h2>
 
             <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">Here you’ll find a selection of my completed works, each crafted with dedication and attention to detail. Every project showcases my commitment to quality, innovation, and efficient solutions tailored to meet each client’s unique needs.</p>
         </div>
@@ -519,16 +981,16 @@
                 </button>
             </div>
             <div id="carrosselProjects" class="flex overflow-x-auto snap-x snap-mandatory scroll-smooth scrollbar-hide gap-16">
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
                     <div class="overflow-hidden w-full">
                         <img class="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/RestauranteFelix.png" alt="">
                     </div>
                         <div class="p-5 pb-8">
-                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Felix Restaurant</p>
+                            <p class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent font-bold text-xl">Felix Restaurant</p>
                             <p class="text-gray-200 pt-5 text-sm">On our website, you can enjoy expertly crafted dishes and also receive an automatically generated PDF with detailed information about your payment transaction — ensuring transparency, security, and convenience for you.</p>
                             <div class="flex items-center justify-between">
-                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
-                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-purple-300 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent pt-2"></i></a>
+                                <button class="text-white bg-[#7C3AED] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-300 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] group btnBrowse text-xs">
                                     <p>View Live</p>
                                     <i class="bi bi-eye text-lg"></i>
                                 </button>
@@ -537,16 +999,16 @@
                 </div>
 
 
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
                     <div class="overflow-hidden w-full">
                         <img class="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Cashew.png" alt="">
                     </div>
                         <div class="p-5 pb-8">
-                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Cashew Digital Marketing</p>
+                            <p class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent font-bold text-xl">Cashew Digital Marketing</p>
                             <p class="text-gray-200 pt-5 text-sm">Cashew Digital Marketing is a project I developed to showcase a modern web hosting landing page. The idea behind it was to combine a clean and professional design with strategic communication, highlighting how a digital presence can be elevated through well-structured marketing solutions.</p>
                             <div class="flex items-center justify-between">
-                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
-                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-purple-300 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent pt-2"></i></a>
+                                <button class="text-white bg-[#7C3AED] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-300 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] group btnBrowse text-xs">
                                     <p>View Live</p>
                                     <i class="bi bi-eye text-lg"></i>
                                 </button>
@@ -554,16 +1016,16 @@
                         </div>
                 </div>
 
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
                     <div class="overflow-hidden w-full">
                         <img class="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Essenza.png" alt="">
                     </div>
                         <div class="p-5 pb-8">
-                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Essenza Imperiale</p>
+                            <p class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent font-bold text-xl">Essenza Imperiale</p>
                             <p class="text-gray-200 pt-5 text-sm">Essenza Imperiale is an exclusive e-commerce project designed for a fine jewelry brand. The concept was to create a luxurious and immersive online experience that reflects elegance, sophistication, and timeless beauty.</p>
                             <div class="flex items-center justify-between">
-                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
-                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-purple-300 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent pt-2"></i></a>
+                                <button class="text-white bg-[#7C3AED] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-300 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] group btnBrowse text-xs">
                                     <p>View Live</p>
                                     <i class="bi bi-eye text-lg"></i>
                                 </button>
@@ -572,16 +1034,16 @@
                 </div>
 
 
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
                     <div class="overflow-hidden w-full">
                         <img class="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Drippin.png" alt="">
                     </div>
                         <div class="p-5 pb-8">
-                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Drippin</p>
+                            <p class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent font-bold text-xl">Drippin</p>
                             <p class="text-gray-200 pt-5 text-sm">Drippin is a streetwear e-commerce project created to embody the essence of urban culture and lifestyle. The website was designed with a bold and modern aesthetic, combining strong visuals, dynamic layouts, and an intuitive shopping experience.</p>
                             <div class="flex items-center justify-between">
-                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
-                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-purple-300 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent pt-2"></i></a>
+                                <button class="text-white bg-[#7C3AED] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-300 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] group btnBrowse text-xs">
                                     <p>View Live</p>
                                     <i class="bi bi-eye text-lg"></i>
                                 </button>
@@ -590,16 +1052,16 @@
                 </div>
 
 
-                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_red] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
                     <div class="overflow-hidden w-full">
                         <img class="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/Ritmo.png" alt="">
                     </div>
                         <div class="p-5 pb-8">
-                            <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-xl">Ritmo Musics</p>
+                            <p class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent font-bold text-xl">Ritmo Musics</p>
                             <p class="text-gray-200 pt-5 text-sm">Ritmo features an introduction page that highlights the platform’s purpose, advantages, and subscription plans, followed by a login system with predefined credentials that grants access to the main music section.</p>
                             <div class="flex items-center justify-between">
-                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-red-600 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent pt-2"></i></a>
-                                <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse text-xs">
+                                <a href="https://github.com/kauancristian/Felix-Restaurant"><i class="bi bi-github cursor-pointer hover:text-purple-300 transition ease-in-out duration-500 text-2xl  bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent pt-2"></i></a>
+                                <button class="text-white bg-[#7C3AED] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-300 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] group btnBrowse text-xs">
                                     <p>View Live</p>
                                     <i class="bi bi-eye text-lg"></i>
                                 </button>
@@ -619,8 +1081,8 @@
      <!-- Sec 6 - Contato -->
      <div id="contato" class="pt-40 lg:pt-24 pb-10">
         <div class="flex flex-col justify-center items-center">
-            <h1 class="bg-gradient-to-r from-[#94032F]/50 via-[#CF0000]/50 to-[#AE0000]/50 border border-[#AE0000] rounded-full inline py-2 px-3 text-white">CONTACT</h1>
-            <h2 class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Talk to me</h2>
+            <h1 class="bg-gradient-to-r from-[#4C1D95]/50 via-[#7C3AED]/50 to-[#A855F7]/50 border border-[#A855F7] rounded-full inline py-2 px-3 text-white">CONTACT</h1>
+            <h2 class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent text-5xl text-center font-semibold pt-5">Talk to me</h2>
             
             <p class="text-gray-200 text-center pt-5 lg:w-[550px] px-10 lg:px-0 mx-auto">These are the ways you can reach out to me for services, collaborations, or any inquiries. Feel free to get in touch — I'm always open to new opportunities!</p>
         </div>
@@ -651,11 +1113,11 @@
 
                     <!-- Abaixo do PC -->
                     <div class="pt-10 mx-auto flex justify-center items-center text-center lg:text-start lg:px-10">
-                        <div id="contactMe" class="bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border-1 border-[#AE0000] shadow-sm shadow-red-700 rounded-lg p-5 mx-auto flex justify-center items-center pb-10 w-[85%]">
+                        <div id="contactMe" class="bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border-1 border-[#A855F7] shadow-sm shadow-purple-700 rounded-lg p-5 mx-auto flex justify-center items-center pb-10 w-[85%]">
                             <div class="flex flex-col gap-8">
                                 <div class="space-y-2">
                                     <p class="text-white text-xl font-semibold">How do you contact me?</p>
-                                    <span class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] block w-[75px] h-0.5 flex mx-auto lg:mx-0"></span>
+                                    <span class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] block w-[75px] h-0.5 flex mx-auto lg:mx-0"></span>
                                 </div>
                                 <p class="text-gray-200">I’m always attentive to my communication channels to make sure no message goes unnoticed. Whether through email, social media, or the website form, I’m fully available to receive proposals, questions, and job opportunities.</p>
                                 <p class="text-gray-200">I’m committed to responding promptly and thoughtfully, providing personalized and transparent communication. Every project that comes my way is handled with the utmost dedication, ensuring quality in every detail.</p>
@@ -663,7 +1125,7 @@
 
                                 <div class="flex justify-center lg:justify-start">
                                     <a href="documents/pdf/curriculo-kauan-cristian.pdf">
-                                        <button class="text-white bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] py-3 rounded-lg mt-3 transition ease-in-out duration-500 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] ease-in-out duration-150 group btnBrowse">
+                                        <button class="text-white bg-[#7C3AED] py-3 rounded-lg mt-3 transition ease-in-out duration-300 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] group btnBrowse">
                                             <i class="bi bi-download"></i>
                                             <p>Download Resume</p>
                                         </button>
@@ -722,9 +1184,9 @@
 
 
                 <div class="code">
-                    <div id="boxCode" class="bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#AE0000]/10 border-t-[5px] border-t-[#AE0000] shadow-sm shadow-red-700 w-[85%] p-5 rounded-lg mx-auto mt-20 lg:mt-0 pb-10">
+                    <div id="boxCode" class="bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border-t-[5px] border-t-[#A855F7] shadow-sm shadow-purple-700 w-[85%] p-5 rounded-lg mx-auto mt-20 lg:mt-0 pb-10">
                         <div class="flex items-center space-x-2">
-                            <span class="w-3 h-3 bg-red-500 rounded-full"></span>
+                            <span class="w-3 h-3 bg-purple-500 rounded-full"></span>
                             <span class="w-3 h-3 bg-yellow-500 rounded-full"></span>
                             <span class="w-3 h-3 bg-green-500 rounded-full"></span>
                             <span class="text-gray-400 text-sm translate-y-[-1px]">developer.js</span>
@@ -732,15 +1194,15 @@
 
                         <div class="pt-4 text-[14px]">
                             <span class="text-white">
-                                <span class="text-red-500">const</span> <span class="text-yellow-500">developer</span> = {
+                                <span class="text-purple-400">const</span> <span class="text-yellow-500">developer</span> = {
                                 <div class="flex flex-col px-10">
-                                    <span>name: <span class="text-red-500">"Kauan Cristian</span>"</span>
-                                    <span>operate: <span class="text-red-500">"Front-end Developer"</span></span>
-                                    <span>locate: <span class="text-red-500">"Brasil - Ceará"</span></span>
+                                    <span>name: <span class="text-purple-400">"Kauan Cristian</span>"</span>
+                                    <span>operate: <span class="text-purple-400">"Full Stack Developer"</span></span>
+                                    <span>locate: <span class="text-purple-400">"Brasil - Ceará"</span></span>
 
                                     <div>
                                         <p>stacks: <span class="ml-2">[</span></p>
-                                        <ul class="px-10 text-red-500">
+                                        <ul class="px-10 text-purple-400">
                                             <li>"HTML 5",</li>
                                             <li>"CSS3",</li>
                                             <li>"TailwindCss"</li>
@@ -755,7 +1217,7 @@
                                     </div>
                                     <div>
                                         <p>tools: <span class="ml-2">[</span></p>
-                                        <ul class="px-10 text-red-500">
+                                        <ul class="px-10 text-purple-400">
                                             <li>"Figma",</li>
                                             <li>"Canva",</li>
                                             <li>"Gimp"</li>
@@ -764,15 +1226,15 @@
                                         <p>] <span class="text-xl">,</span></p>
                                     </div>
                                     <div class="flex flex-col">
-                                        <span>mission: <span class="text-red-500">"Being the best at what I do, and bringing a unique experience to the user."</span></span>
-                                        <span class="pt-1">observation: <span class="text-red-500">"I always want to improve, so if you want to see a job well done and improved, just call."</span></span>
-                                        <span class="pt-6"><span class="text-red-500">const</span> <span class="text-yellow-500">let's go?</span> = ( ) => {</span>
+                                        <span>mission: <span class="text-purple-400">"Being the best at what I do, and bringing a unique experience to the user."</span></span>
+                                        <span class="pt-1">observation: <span class="text-purple-400">"I always want to improve, so if you want to see a job well done and improved, just call."</span></span>
+                                        <span class="pt-6"><span class="text-purple-400">const</span> <span class="text-yellow-500">let's go?</span> = ( ) => {</span>
                                             <div class="flex flex-col px-7">
-                                                <span><span class="text-red-500">let</span> <span class="text-yellow-500">you</span> = <span class="text-green-500">null</span>;</span>
-                                                <span><span class="text-red-500">if</span>(you work with me) {</span>
+                                                <span><span class="text-purple-400">let</span> <span class="text-yellow-500">you</span> = <span class="text-green-500">null</span>;</span>
+                                                <span><span class="text-purple-400">if</span>(you work with me) {</span>
                                                 <span class="px-6"><span class="text-yellow-500">you</span> = "satisfied" ;</span>
                                                 <span>}</span>
-                                                <span><span class="text-red-500">else</span> {</span>
+                                                <span><span class="text-purple-400">else</span> {</span>
                                                 <span class="px-6"><span class="text-yellow-500">you</span> = "sad and regretful"</span>
                                                 <span>}</span>
                                             </div>
@@ -790,19 +1252,19 @@
      <footer class="pb-10 pt-10">
         <div class="grid lg:grid-cols-3">
             <div class="mx-auto flex flex-col justify-center">
-                <span class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] block w-screen h-0.5"></span>
+                <span class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] block w-screen h-0.5"></span>
                 <div class="flex space-x-2 text-gray-200 items-center ml-2 lg:ml-0 pt-5 lg:pt-0">
                     <img class="w-16 lg:w-24" src="assets/logoPort.png" alt="">
                     <h2 class="text-lg lg:text-xl font-bold">Kauan Cristian</h2>
                 </div>
                 <div class="text-gray-200 px-7 space-y-2">
-                    <p class="bg-gradient-to-r from-[#AE0000] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-semibold">Front-End Developer</p>
+                    <p class="bg-gradient-to-r from-[#A855F7] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent font-semibold">Full Stack Developer</p>
                     <p class="lg:w-[300px]">Always seeking improvement and creating unique web experiences.</p>
                 </div>
             </div>
 
             <div class="flex flex-col justify-center items-center pt-5 lg:pt-7">
-                <p class="text-gray-200 px-7">To do anything well requires dedication, but also loving what you do, and without a doubt I <span class="font-semibold bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent">love developing</span>.</p>
+                <p class="text-gray-200 px-7">To do anything well requires dedication, but also loving what you do, and without a doubt I <span class="font-semibold bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent">love developing</span>.</p>
 
                 <div class="pt-10 text-sm">
                     <p class="text-gray-200 text-center lg:text-start">@2025 Developed by Kauan Cristian. All rights reserved.</p>
@@ -812,7 +1274,7 @@
             <div class="flex justify-center mx-auto relative pt-[100px]">
                 <div class="grid grid-cols-2 space-x-9">
                     <div class="flex flex-col">
-                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-lg">Explore More</p>
+                        <p class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent font-bold text-lg">Explore More</p>
                         <ul class="text-gray-400 pt-5">
                             <a href="#sec1">
                                 <li class="p-1 cursor-pointer hover:text-white transition ease-in-out duration-500 w-1">Home</li>
@@ -836,17 +1298,21 @@
                     </div>
 
                     <div class="flex flex-col">
-                        <p class="bg-gradient-to-r from-[#94032F] via-[#CF0000] to-[#AE0000] bg-clip-text text-transparent font-bold text-lg">Associate</p>
+                        <p class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent font-bold text-lg">Associate</p>
                         <div class="flex space-x-4 text-gray-400 text-3xl pt-3">
-                            <a href="https://github.com/kauancristian"><i class="bi bi-github cursor-pointer hover:translate-y-[-3px] hover:text-[#AE0000] transition ease-in-out duration-500"></i></a>
-                            <a href="mailto:cristian9br@gmail.com"><i class="bi bi-envelope-fill cursor-pointer hover:translate-y-[-3px] hover:text-[#AE0000] transition ease-in-out duration-500"></i></a>
-                            <a href="https://www.instagram.com/kauanxrs_/"><i class="bi bi-instagram cursor-pointer hover:translate-y-[-3px] hover:text-[#AE0000] transition ease-in-out duration-500"></i></a>
+                            <a href="https://github.com/kauancristian"><i class="bi bi-github cursor-pointer hover:translate-y-[-3px] hover:text-[#A855F7] transition ease-in-out duration-500"></i></a>
+                            <a href="mailto:cristian9br@gmail.com"><i class="bi bi-envelope-fill cursor-pointer hover:translate-y-[-3px] hover:text-[#A855F7] transition ease-in-out duration-500"></i></a>
+                            <a href="https://www.instagram.com/kauanxrs_/"><i class="bi bi-instagram cursor-pointer hover:translate-y-[-3px] hover:text-[#A855F7] transition ease-in-out duration-500"></i></a>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
      </footer>
+
+     <button id="backToTop" type="button" aria-label="Voltar ao início" title="Voltar ao início">
+        <i class="bi bi-arrow-up text-xl" aria-hidden="true"></i>
+     </button>
 
      <script>
         const carrosselProjects = document.getElementById("carrosselProjects");
@@ -875,6 +1341,149 @@
 
             carrosselProjects.scrollTo({left:scrollAmount, behavior: "smooth"})
         };
+     </script>
+
+     <script>
+        const themeToggle = document.getElementById("themeToggle");
+        const themeIcon = document.getElementById("themeIcon");
+        const languageToggle = document.getElementById("languageToggle");
+        const backToTop = document.getElementById("backToTop");
+        let portfolioLanguage = localStorage.getItem("portfolioLanguage") || "pt";
+
+        const translations = {
+            "Home": "Início",
+            "About": "Sobre",
+            "Skills": "Habilidades",
+            "Projects": "Projetos",
+            "Contact": "Contato",
+            "Developing interfaces that": "Desenvolvendo interfaces que",
+            "delight": "encantam",
+            "Full Stack Developer specialized in UI/UX. I turn ideas into intuitive interfaces and memorable experiences, always focused on delivering the best for the user.": "Desenvolvedor Full Stack com foco em UI/UX. Transformo ideias em interfaces intuitivas e experiências marcantes, sempre buscando entregar o melhor para quem usa.",
+            "Browse my work": "Conheça meu trabalho",
+            "Let's talk?": "Vamos conversar?",
+            "ABOUT ME": "SOBRE MIM",
+            "Who am I?": "Quem sou eu?",
+            "Learn a little more about me, my acquired knowledge, my journey, and my goals. And, of course, my love for web development.": "Conheça um pouco mais sobre mim, meus conhecimentos, minha trajetória e meus objetivos — e, claro, minha paixão por desenvolvimento web.",
+            "I'm Kauan Cristian, a passionate and confident Full Stack Developer. I love learning, solving problems, and creating interactive, user-friendly web experiences. My goal is to turn ideas into smooth, modern, and meaningful interfaces.": "Sou Kauan Cristian, um desenvolvedor Full Stack apaixonado por tecnologia. Gosto de aprender, resolver problemas e criar experiências web interativas e fáceis de usar. Meu objetivo é transformar ideias em soluções modernas e relevantes.",
+            "My goal": "Meu objetivo",
+            "My goal is to be the best at what I do, creating user interfaces and digital solutions that offer the best experience. I strive to improve daily, learning and staying updated with the latest technologies. I deliver not just software, but intuitive, efficient, and modern experiences, always staying at the forefront of Full Stack development.": "Meu objetivo é evoluir continuamente e criar interfaces e soluções digitais que ofereçam a melhor experiência. Busco aprender todos os dias e acompanhar novas tecnologias para entregar produtos intuitivos, eficientes e modernos.",
+            "What do I follow": "O que me guia",
+            "Being a developer goes beyond writing code. It requires vision, understanding of design and user experience, teamwork, and above all, passion. Loving what you do is what turns projects into great experiences. I’m always learning and striving to give my best — coding is not just a job for me, it’s a purpose.": "Ser desenvolvedor vai além de escrever código: exige visão, atenção ao design e à experiência do usuário, trabalho em equipe e, acima de tudo, paixão. Estou sempre aprendendo e buscando dar o meu melhor — desenvolver é mais do que um trabalho, é um propósito.",
+            "MY SKILLS": "MINHAS HABILIDADES",
+            "My technology stacks": "Tecnologias que utilizo",
+            "These are the main technologies and tools I use to build modern, responsive, and functional interfaces.": "Estas são as principais tecnologias e ferramentas que utilizo para criar interfaces modernas, responsivas e funcionais.",
+            "PROJECTS": "PROJETOS",
+            "Developed by me": "Desenvolvidos por mim",
+            "Here you’ll find a selection of my completed works, each crafted with dedication and attention to detail. Every project showcases my commitment to quality, innovation, and efficient solutions tailored to meet each client’s unique needs.": "Aqui você encontra uma seleção dos meus projetos, desenvolvidos com dedicação e atenção aos detalhes. Cada trabalho representa meu compromisso com qualidade, inovação e soluções pensadas para cada necessidade.",
+            "On our website, you can enjoy expertly crafted dishes and also receive an automatically generated PDF with detailed information about your payment transaction — ensuring transparency, security, and convenience for you.": "No site, você pode conhecer pratos preparados com cuidado e receber um PDF gerado automaticamente com os detalhes do pagamento — com transparência, segurança e praticidade.",
+            "Cashew Digital Marketing is a project I developed to showcase a modern web hosting landing page. The idea behind it was to combine a clean and professional design with strategic communication, highlighting how a digital presence can be elevated through well-structured marketing solutions.": "Cashew Digital Marketing é uma landing page moderna que combina design profissional e comunicação estratégica para mostrar como uma presença digital pode ser potencializada por soluções de marketing bem estruturadas.",
+            "Essenza Imperiale is an exclusive e-commerce project designed for a fine jewelry brand. The concept was to create a luxurious and immersive online experience that reflects elegance, sophistication, and timeless beauty.": "Essenza Imperiale é um projeto de e-commerce para uma marca de joias. A proposta foi criar uma experiência online sofisticada e imersiva, que transmite elegância e beleza atemporal.",
+            "Drippin is a streetwear e-commerce project created to embody the essence of urban culture and lifestyle. The website was designed with a bold and modern aesthetic, combining strong visuals, dynamic layouts, and an intuitive shopping experience.": "Drippin é um projeto de e-commerce de streetwear que traduz a essência da cultura urbana. O site combina identidade visual marcante, layout dinâmico e uma experiência de compra intuitiva.",
+            "Ritmo features an introduction page that highlights the platform’s purpose, advantages, and subscription plans, followed by a login system with predefined credentials that grants access to the main music section.": "Ritmo apresenta a proposta da plataforma, suas vantagens e planos de assinatura. Depois, um sistema de login com credenciais predefinidas libera o acesso à área principal de músicas.",
+            "Kauan Cristian - Full Stack": "Kauan Cristian - Desenvolvedor Full Stack",
+            "View Live": "Ver projeto",
+            "CONTACT": "CONTATO",
+            "Talk to me": "Vamos conversar",
+            "These are the ways you can reach out to me for services, collaborations, or any inquiries. Feel free to get in touch — I'm always open to new opportunities!": "Aqui estão algumas formas de falar comigo sobre serviços, parcerias ou dúvidas. Entre em contato — estou aberto a novas oportunidades!",
+            "How do you contact me?": "Como entrar em contato?",
+            "I’m always attentive to my communication channels to make sure no message goes unnoticed. Whether through email, social media, or the website form, I’m fully available to receive proposals, questions, and job opportunities.": "Acompanho meus canais de comunicação para que nenhuma mensagem passe despercebida. Estou disponível para receber propostas, dúvidas e oportunidades por e-mail ou redes sociais.",
+            "I’m committed to responding promptly and thoughtfully, providing personalized and transparent communication. Every project that comes my way is handled with the utmost dedication, ensuring quality in every detail.": "Procuro responder com agilidade e atenção, mantendo uma comunicação transparente e personalizada. Trato cada projeto com dedicação e cuidado em todos os detalhes.",
+            "For more details, please see my resume below.": "Para mais detalhes, consulte meu currículo abaixo.",
+            "Download Resume": "Baixar currículo",
+            "Full Stack Developer": "Desenvolvedor Full Stack",
+            "To do anything well requires dedication, but also loving what you do, and without a doubt I": "Para fazer qualquer coisa bem é preciso dedicação, mas também amar o que se faz — e sem dúvida eu",
+            "Always seeking improvement and creating unique web experiences.": "Sempre evoluindo e criando experiências web únicas.",
+            "@2025 Developed by Kauan Cristian. All rights reserved.": "@2025 Desenvolvido por Kauan Cristian. Todos os direitos reservados.",
+            "love developing": "amo desenvolver",
+            "Explore More": "Explore",
+            "Associate": "Conecte-se",
+            "Email: cristian9br@gmail.com": "E-mail: cristian9br@gmail.com",
+            "Github: github.com/kauancristian": "GitHub: github.com/kauancristian",
+            "Instagram: kauanxrs_": "Instagram: kauanxrs_",
+            "\"Full Stack Developer\"": "\"Desenvolvedor Full Stack\"",
+            "\"Being the best at what I do, and bringing a unique experience to the user.\"": "\"Ser o melhor no que faço e proporcionar uma experiência única ao usuário.\"",
+            "\"I always want to improve, so if you want to see a job well done and improved, just call.\"": "\"Quero sempre evoluir; se busca um trabalho bem feito e em constante melhoria, fale comigo.\"",
+            "you work with me": "você trabalha comigo",
+            "\"satisfied\"": "\"satisfeito\"",
+            "\"sad and regretful\"": "\"triste e arrependido\""
+        };
+        const portugueseToEnglish = Object.fromEntries(
+            Object.entries(translations).map(([english, portuguese]) => [portuguese, english])
+        );
+
+        function updateTheme(theme) {
+            const isLight = theme === "light";
+            document.body.classList.toggle("light-mode", isLight);
+            themeToggle.setAttribute("aria-pressed", String(isLight));
+            themeIcon.className = isLight ? "bi bi-moon-fill" : "bi bi-sun-fill";
+            const label = portfolioLanguage === "pt"
+                ? (isLight ? "Ativar tema escuro" : "Ativar tema claro")
+                : (isLight ? "Switch to dark theme" : "Switch to light theme");
+            themeToggle.setAttribute("aria-label", label);
+            themeToggle.title = label;
+            localStorage.setItem("portfolioTheme", theme);
+        }
+
+        function updateLanguage(language) {
+            const source = language === "pt" ? translations : portugueseToEnglish;
+            const walker = document.createTreeWalker(document.body, NodeFilter.SHOW_TEXT);
+            let textNode;
+
+            while ((textNode = walker.nextNode())) {
+                if (textNode.parentElement.closest("script, style")) continue;
+                const text = textNode.nodeValue;
+                const trimmed = text.trim();
+                if (!source[trimmed]) continue;
+                const leading = text.match(/^\s*/)[0];
+                const trailing = text.match(/\s*$/)[0];
+                textNode.nodeValue = `${leading}${source[trimmed]}${trailing}`;
+            }
+
+            portfolioLanguage = language;
+            document.documentElement.lang = language === "pt" ? "pt-BR" : "en";
+            document.title = language === "pt"
+                ? "Kauan Cristian | Desenvolvedor Full Stack"
+                : "Kauan Cristian | Full Stack Developer";
+            languageToggle.textContent = language === "pt" ? "EN" : "PT";
+            const label = language === "pt" ? "Mudar idioma para inglês" : "Mudar idioma para português";
+            languageToggle.setAttribute("aria-label", label);
+            languageToggle.title = label;
+            const themeLabel = document.body.classList.contains("light-mode")
+                ? (language === "pt" ? "Ativar tema escuro" : "Switch to dark theme")
+                : (language === "pt" ? "Ativar tema claro" : "Switch to light theme");
+            themeToggle.setAttribute("aria-label", themeLabel);
+            themeToggle.title = themeLabel;
+            backToTop.setAttribute("aria-label", language === "pt" ? "Voltar ao início" : "Back to top");
+            backToTop.title = language === "pt" ? "Voltar ao início" : "Back to top";
+            localStorage.setItem("portfolioLanguage", language);
+        }
+
+        themeToggle.addEventListener("click", () => {
+            updateTheme(document.body.classList.contains("light-mode") ? "dark" : "light");
+        });
+        languageToggle.addEventListener("click", () => {
+            updateLanguage(portfolioLanguage === "pt" ? "en" : "pt");
+        });
+        backToTop.addEventListener("click", () => {
+            window.scrollTo({
+                top: 0,
+                behavior: window.matchMedia("(prefers-reduced-motion: reduce)").matches ? "auto" : "smooth"
+            });
+        });
+        window.addEventListener("scroll", () => {
+            backToTop.classList.toggle("is-visible", window.scrollY > 400);
+        }, { passive: true });
+
+        updateTheme(localStorage.getItem("portfolioTheme") || "dark");
+        updateLanguage(portfolioLanguage);
+        const startAtHome = () => {
+            if (location.hash) history.replaceState(null, "", location.pathname + location.search);
+            window.scrollTo(0, 0);
+        };
+        startAtHome();
+        window.addEventListener("load", () => {
+            requestAnimationFrame(() => requestAnimationFrame(startAtHome));
+        }, { once: true });
      </script>
 
 
