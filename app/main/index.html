@@ -7,7 +7,7 @@
         if ("scrollRestoration" in history) history.scrollRestoration = "manual";
         if (location.hash) history.replaceState(null, "", location.pathname + location.search);
     </script>
-    <link rel="shortcut icon" href="assets/coroa.png" type="image/x-icon">
+    <link rel="shortcut icon" href="assets/coroa-purple.png" type="image/png">
     <script src="https://cdn.tailwindcss.com"></script>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
     <title>Kauan Cristian | Full Stack Developer</title>
@@ -30,7 +30,108 @@
         }
 
         body{
+            position: relative;
+            isolation: isolate;
+            --card-surface: #121212;
             background: url(assets/bg.jpg);
+        }
+
+        .cloud-drift {
+            position: fixed;
+            inset: 0;
+            z-index: 0;
+            pointer-events: none;
+            mix-blend-mode: screen;
+            overflow: hidden;
+        }
+
+        .cloud-drift--hero {
+            z-index: 60;
+        }
+
+        .cloud-drift--hero .cloud {
+            opacity: 0.46;
+        }
+
+        .cloud {
+            position: absolute;
+            left: 0;
+            width: clamp(280px, 38vw, 540px);
+            aspect-ratio: 3.2;
+            opacity: 0.78;
+            filter: drop-shadow(0 10px 20px rgb(124 58 237 / 35%));
+            animation: cloudDrift linear infinite;
+            will-change: transform;
+        }
+
+        .cloud__shape {
+            display: block;
+            width: 100%;
+            height: 100%;
+            overflow: visible;
+        }
+
+        .cloud--one {
+            top: 16%;
+            animation-duration: 52s;
+            animation-delay: -24s;
+        }
+
+        .cloud--two {
+            top: 44%;
+            width: clamp(240px, 30vw, 420px);
+            opacity: 0.56;
+            animation-duration: 64s;
+            animation-delay: -52s;
+        }
+
+        .cloud--three {
+            top: 70%;
+            width: clamp(300px, 42vw, 600px);
+            opacity: 0.48;
+            animation-duration: 58s;
+            animation-delay: -9s;
+        }
+
+        .cloud--four {
+            top: 29%;
+            width: clamp(220px, 26vw, 360px);
+            opacity: 0.42;
+            animation-duration: 72s;
+            animation-delay: -44s;
+        }
+
+        @keyframes cloudDrift {
+            0% {
+                transform: translate3d(-120vw, 0, 0);
+            }
+            100% {
+                transform: translate3d(120vw, 0, 0);
+            }
+        }
+
+        #sec1,
+        #sec2,
+        #sec3,
+        #projects,
+        #contato {
+            position: relative;
+            z-index: 1;
+        }
+
+        #boxsAbout > div,
+        #skillsBox > div > div > div,
+        #carrosselProjects > div,
+        #boxCode,
+        #pc .pc-monitor {
+            position: relative;
+            z-index: 2;
+            background-color: var(--card-surface) !important;
+            background-image: none !important;
+        }
+
+        #skillsBox > div > div > div:hover {
+            background: #1b1428 !important;
         }
 
         #sec1{
@@ -396,6 +497,80 @@
                 box-shadow 0.65s cubic-bezier(0.22, 1, 0.36, 1);
         }
 
+        #carrosselProjects > div > div:first-child img {
+            display: block;
+            width: 100% !important;
+            height: 100% !important;
+            object-fit: cover !important;
+        }
+
+        @media (min-width: 1024px) {
+            #projectsBox {
+                display: block;
+            }
+
+            #carrosselProjects {
+                display: grid;
+                width: 100%;
+                grid-template-columns: repeat(3, minmax(0, 1fr));
+                gap: 1.5rem;
+                overflow: visible;
+                scroll-snap-type: none;
+            }
+
+            #carrosselProjects > div {
+                display: flex;
+                width: auto !important;
+                height: auto !important;
+                min-height: 420px;
+                flex-direction: column;
+                flex-shrink: 1 !important;
+                margin: 0 !important;
+                scroll-snap-align: none;
+            }
+
+            #carrosselProjects > div > div:first-child {
+                height: 165px;
+                flex: 0 0 165px;
+            }
+
+            #carrosselProjects > div > div:first-child img {
+                height: 100%;
+            }
+
+            #carrosselProjects > div > div:last-child {
+                display: flex;
+                flex: 1;
+                flex-direction: column;
+                padding: 1rem;
+            }
+
+            #carrosselProjects > div > div:last-child > p:nth-child(2) {
+                padding-top: 0.75rem;
+            }
+
+            #carrosselProjects > div > div:last-child > div:last-child {
+                margin-top: auto;
+                padding-top: 0.75rem;
+            }
+
+            #btnLeft,
+            #btnRight {
+                display: none;
+            }
+        }
+
+        @media (max-width: 1023px) {
+            #carrosselProjects > div > div:first-child {
+                height: 160px;
+            }
+
+            #carrosselProjects > div > div:first-child img {
+                height: 100%;
+                object-fit: contain;
+            }
+        }
+
         #skillsBox > div > div > div {
             transition: transform 0.5s cubic-bezier(0.22, 1, 0.36, 1),
                 background-color 0.5s cubic-bezier(0.22, 1, 0.36, 1),
@@ -453,8 +628,22 @@
         }
 
         body.light-mode {
+            --card-surface: #fff;
             background: #f7f4fc !important;
             color: #251b35;
+        }
+
+        body.light-mode .cloud-drift {
+            mix-blend-mode: multiply;
+        }
+
+        body.light-mode .cloud {
+            opacity: 0.2;
+            filter: drop-shadow(0 8px 18px rgb(124 58 237 / 18%));
+        }
+
+        body.light-mode .cloud-drift--hero .cloud {
+            opacity: 0.16;
         }
 
         body.light-mode #sec1 {
@@ -502,35 +691,44 @@
 
         body.light-mode [class*="bg-[#121212]"],
         body.light-mode [class*="bg-[#1c1c1c]"] {
-            background-color: rgb(255 255 255 / 88%) !important;
+            background-color: #fff !important;
         }
 
         body.light-mode #boxsAbout > div,
         body.light-mode #carrosselProjects > div,
         body.light-mode #skillsBox > div > div > div,
-        body.light-mode #boxCode,
-        body.light-mode #contactMe {
-            background-color: #fff !important;
-            background-image: none !important;
+        body.light-mode #boxCode {
+            background: #fff !important;
             border-color: #d8cde8 !important;
             box-shadow: 0 12px 30px rgb(52 32 82 / 10%);
         }
 
         body.light-mode #boxsAbout > div > div:last-child,
         body.light-mode #carrosselProjects > div > div:last-child,
-        body.light-mode #contactMe p,
         body.light-mode #boxCode > div {
             color: #382d48;
         }
 
         body.light-mode #boxsAbout .text-gray-200,
         body.light-mode #carrosselProjects .text-gray-200,
-        body.light-mode #contactMe .text-gray-200 {
+        body.light-mode #boxCode .text-gray-200 {
             color: #4b4357 !important;
         }
 
         body.light-mode #skillsBox > div > div > div {
+            background: #fff !important;
             border-color: #d8cde8 !important;
+        }
+
+        body.light-mode #skillsBox > div > div > div:hover {
+            background: #f3edfb !important;
+        }
+
+        body.light-mode #boxsAbout > div.bg-gradient-to-br,
+        body.light-mode #skillsBox > div > div > div.relative,
+        body.light-mode #boxCode.bg-gradient-to-br {
+            background: #fff !important;
+            background-image: none !important;
         }
 
         body.light-mode img[src*="github.png"] {
@@ -565,7 +763,7 @@
         }
 
         body.light-mode #infs-sec1 a .btnBrowse {
-            color: #5b21b6 !important;
+            color: #fff !important;
         }
 
         body.light-mode .theme-toggle,
@@ -582,6 +780,10 @@
                 animation-duration: 0.01ms !important;
                 animation-iteration-count: 1 !important;
                 transition-duration: 0.01ms !important;
+            }
+
+            .cloud-drift {
+                animation: none !important;
             }
         }
 
@@ -648,6 +850,32 @@
     </style>
 </head>
 <body class="bg-[#090510]">
+    <div class="cloud-drift" aria-hidden="true">
+        <span class="cloud cloud--one">
+            <svg class="cloud__shape" viewBox="0 0 500 190" preserveAspectRatio="none">
+                <defs><linearGradient id="cloudGradientOne" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d8b4fe"/><stop offset=".48" stop-color="#a855f7"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs>
+                <path fill="url(#cloudGradientOne)" d="M72 153C42 155 25 139 27 119C16 99 33 78 59 80C54 54 78 38 104 42C103 14 132 2 155 18C174-5 211 0 223 27C243 4 278 10 285 37C309 17 345 27 351 54C382 38 414 52 414 79C442 66 469 83 465 108C489 117 480 149 450 153C406 166 370 151 334 160C296 172 264 155 226 163C181 173 148 157 112 163C96 165 83 160 72 153Z"/>
+            </svg>
+        </span>
+        <span class="cloud cloud--two">
+            <svg class="cloud__shape" viewBox="0 0 500 190" preserveAspectRatio="none">
+                <defs><linearGradient id="cloudGradientTwo" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d8b4fe"/><stop offset=".48" stop-color="#a855f7"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs>
+                <path fill="url(#cloudGradientTwo)" d="M72 153C42 155 25 139 27 119C16 99 33 78 59 80C54 54 78 38 104 42C103 14 132 2 155 18C174-5 211 0 223 27C243 4 278 10 285 37C309 17 345 27 351 54C382 38 414 52 414 79C442 66 469 83 465 108C489 117 480 149 450 153C406 166 370 151 334 160C296 172 264 155 226 163C181 173 148 157 112 163C96 165 83 160 72 153Z"/>
+            </svg>
+        </span>
+        <span class="cloud cloud--three">
+            <svg class="cloud__shape" viewBox="0 0 500 190" preserveAspectRatio="none">
+                <defs><linearGradient id="cloudGradientThree" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d8b4fe"/><stop offset=".48" stop-color="#a855f7"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs>
+                <path fill="url(#cloudGradientThree)" d="M72 153C42 155 25 139 27 119C16 99 33 78 59 80C54 54 78 38 104 42C103 14 132 2 155 18C174-5 211 0 223 27C243 4 278 10 285 37C309 17 345 27 351 54C382 38 414 52 414 79C442 66 469 83 465 108C489 117 480 149 450 153C406 166 370 151 334 160C296 172 264 155 226 163C181 173 148 157 112 163C96 165 83 160 72 153Z"/>
+            </svg>
+        </span>
+        <span class="cloud cloud--four">
+            <svg class="cloud__shape" viewBox="0 0 500 190" preserveAspectRatio="none">
+                <defs><linearGradient id="cloudGradientFour" x1="0" y1="0" x2="0" y2="1"><stop stop-color="#d8b4fe"/><stop offset=".48" stop-color="#a855f7"/><stop offset="1" stop-color="#6d28d9"/></linearGradient></defs>
+                <path fill="url(#cloudGradientFour)" d="M72 153C42 155 25 139 27 119C16 99 33 78 59 80C54 54 78 38 104 42C103 14 132 2 155 18C174-5 211 0 223 27C243 4 278 10 285 37C309 17 345 27 351 54C382 38 414 52 414 79C442 66 469 83 465 108C489 117 480 149 450 153C406 166 370 151 334 160C296 172 264 155 226 163C181 173 148 157 112 163C96 165 83 160 72 153Z"/>
+            </svg>
+        </span>
+    </div>
     <!-- Sec 1 - Home -->   
     <header id="siteHeader" class="site-header">
             <div class="site-header__bar">
@@ -779,7 +1007,7 @@
                     <div class="text-white text-center flex justify-center lg:items-center mt-40 lg:mt-0">
                         <div class="lg:translate-y-[-10px]">
                             <div id="myImage" class="bg-gradient-to-r from-[#C084FC] via-[#7C3AED] to-[#A855F7] p-[5px] rounded-full w-fit">
-                                <img class="object-cover rounded-full w-64 h-64 bg-[#262626] p-2" src="assets/eu.png" alt="">
+                                <img class="object-cover rounded-full w-64 h-64 bg-[#262626] p-2" src="assets/eu.jpg" alt="">
                             </div>
                         </div>
                     </div>
@@ -958,6 +1186,26 @@
                                     </div>
                                 </div>
                             </div>
+
+                            <!-- Skill 13 -->
+                            <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212] w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d]">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/php/php-original.svg" alt="">
+                                        <h2 class="text-white font-semibold translate-y-[1px]">PHP</h2>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- Skill 14 -->
+                            <div class="group w-32 lg:w-72 h-40 mx-auto [perspective:1000px]">
+                                <div class="relative bg-[#121212] w-full h-full flex flex-col justify-center items-center border-2 rounded-lg border-[#262626] cursor-pointer hover:translate-y-[-5px] transition ease-in-out duration-300 mx-auto group-hover:[transform:rotateY(20deg)] [transform-style:preserve-3d]">
+                                    <div class="flex flex-col justify-center items-center">
+                                        <img class="w-20" src="https://cdn.jsdelivr.net/gh/devicons/devicon@2.16.0/icons/mysql/mysql-original.svg" alt="">
+                                        <h2 class="text-white font-semibold translate-y-[1px]">MySQL</h2>
+                                    </div>
+                                </div>
+                            </div>
                         </div>
                     </div>
                 </div>
@@ -1068,6 +1316,22 @@
                             </div>
                         </div>
                 </div>
+
+                <div class="rounded-lg overflow-hidden group hover:translate-y-[-4px] transition ease-in-out duration-700 bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border border-gray-900 hover:drop-shadow-[0_0_3px_#A855F7] w-full sm:w-[75%] lg:w-[30%] lg:h-[500px] mx-auto flex-shrink-0 snap-center mx-auto">
+                    <div class="overflow-hidden w-full">
+                        <img class="w-full h-full object-contain transition-transform duration-500 ease-in-out group-hover:scale-110" src="assets/projects/projetoSalaberga.png" alt="Portal Salaberga">
+                    </div>
+                    <div class="p-5 pb-8">
+                            <p class="bg-gradient-to-r from-[#4C1D95] via-[#7C3AED] to-[#A855F7] bg-clip-text text-transparent font-bold text-xl">Portal Salaberga</p>
+                            <p class="text-gray-200 pt-5 text-sm">A hosted institutional portal bringing together multiple subsystems built to serve both the institution and CREDE 01.</p>
+                            <div class="flex items-center justify-end">
+                                <a href="https://salaberga.com/salaberga/portalsalaberga/app/main/" target="_blank" rel="noopener noreferrer" class="text-white bg-[#7C3AED] py-2 px-4 rounded-lg mt-3 transition ease-in-out duration-300 flex justify-center items-center space-x-3 text-center cursor-pointer hover:translate-y-[-5px] btnBrowse text-xs">
+                                    <span>View Live</span>
+                                    <i class="bi bi-box-arrow-up-right text-lg" aria-hidden="true"></i>
+                                </a>
+                            </div>
+                    </div>
+                </div>
             </div>
             <div class="">
                 <button id="btnRight" class="bg-[#262626]/40 py-4 px-5 rounded-full hover:bg-[#262626] transition ease-in-out duration-300 absolute top-1/2 -translate-y-1/2 right-2 z-[500] scaleBtn">
@@ -1090,7 +1354,7 @@
         <div>
             <div class="grid lg:grid-cols-2 pt-20">
                 <div id="pc" class="flex flex-col items-center code">
-                    <div class="bg-[#121212]/80 w-[90%] sm:w-[500px] lg:w-[470px] lg:h-[260px] mx-auto rounded-lg flex items-center justify-center drop-shadow-[0_0_4px_gray]">
+                    <div class="pc-monitor bg-[#121212]/80 w-[90%] sm:w-[500px] lg:w-[470px] lg:h-[260px] mx-auto rounded-lg flex items-center justify-center drop-shadow-[0_0_4px_gray]">
                         <div class="bg-black w-[95%] h-[90%] rounded-lg code px-5 pt-6 flex flex-col justify-center ">
                             <div class="pb-5 flex items-center space-x-3">
                                 <i class="bi bi-envelope-fill text-[#43CA76] text-xl bg-[#43CA76]/20 py-3 px-4 rounded-full"></i>
@@ -1113,7 +1377,7 @@
 
                     <!-- Abaixo do PC -->
                     <div class="pt-10 mx-auto flex justify-center items-center text-center lg:text-start lg:px-10">
-                        <div id="contactMe" class="bg-gradient-to-br from-[#121212]/80 via-[#1c1c1c]/80 to-[#A855F7]/10 border-1 border-[#A855F7] shadow-sm shadow-purple-700 rounded-lg p-5 mx-auto flex justify-center items-center pb-10 w-[85%]">
+                        <div id="contactMe" class="mx-auto w-[85%]">
                             <div class="flex flex-col gap-8">
                                 <div class="space-y-2">
                                     <p class="text-white text-xl font-semibold">How do you contact me?</p>
@@ -1124,7 +1388,7 @@
                                 <p class="text-gray-200">For more details, please see my resume below.</p>
 
                                 <div class="flex justify-center lg:justify-start">
-                                    <a href="documents/pdf/curriculo-kauan-cristian.pdf">
+                                    <a href="documents/pdf/Curriculo_Kauan_Cristian_Santos_de_Lima.pdf">
                                         <button class="text-white bg-[#7C3AED] py-3 rounded-lg mt-3 transition ease-in-out duration-300 flex justify-center items-center w-[200px] space-x-3 text-center cursor-pointer hover:translate-y-[-5px] group btnBrowse">
                                             <i class="bi bi-download"></i>
                                             <p>Download Resume</p>
@@ -1318,29 +1582,25 @@
         const carrosselProjects = document.getElementById("carrosselProjects");
         const btnLeft = document.getElementById("btnLeft");
         const btnRight = document.getElementById("btnRight");
-        let scrollAmount = 0;
+        const mobileProjectCarousel = window.matchMedia("(max-width: 1023px)");
+        const moveProjectCarousel = (direction) => {
+            if (!mobileProjectCarousel.matches) return;
 
-        const itemWidth = carrosselProjects.children[0].offsetWidth;
-        
-        btnRight.onclick = () => {
-            if(scrollAmount >= carrosselProjects.scrollWidth - carrosselProjects.clientWidth) {
-                scrollAmount = 0;
-            } else{
-                scrollAmount += itemWidth;
-            };
-
-            carrosselProjects.scrollTo({left: scrollAmount, behavior: "smooth"})
+            const cards = Array.from(carrosselProjects.children);
+            const currentIndex = cards.reduce((closestIndex, card, index) => {
+                const currentDistance = Math.abs(cards[closestIndex].offsetLeft - carrosselProjects.scrollLeft);
+                const nextDistance = Math.abs(card.offsetLeft - carrosselProjects.scrollLeft);
+                return nextDistance < currentDistance ? index : closestIndex;
+            }, 0);
+            const nextIndex = (currentIndex + direction + cards.length) % cards.length;
+            carrosselProjects.scrollTo({ left: cards[nextIndex].offsetLeft, behavior: "smooth" });
         };
 
-        btnLeft.onclick = () => {
-            if(scrollAmount <= 0) {
-                scrollAmount = carrosselProjects.scrollWidth - carrosselProjects.clientWidth;
-            } else{
-                scrollAmount -= itemWidth;
-            };
-
-            carrosselProjects.scrollTo({left:scrollAmount, behavior: "smooth"})
-        };
+        btnRight.addEventListener("click", () => moveProjectCarousel(1));
+        btnLeft.addEventListener("click", () => moveProjectCarousel(-1));
+        mobileProjectCarousel.addEventListener("change", (event) => {
+            if (!event.matches) carrosselProjects.scrollLeft = 0;
+        });
      </script>
 
      <script>
@@ -1380,6 +1640,7 @@
             "Essenza Imperiale is an exclusive e-commerce project designed for a fine jewelry brand. The concept was to create a luxurious and immersive online experience that reflects elegance, sophistication, and timeless beauty.": "Essenza Imperiale é um projeto de e-commerce para uma marca de joias. A proposta foi criar uma experiência online sofisticada e imersiva, que transmite elegância e beleza atemporal.",
             "Drippin is a streetwear e-commerce project created to embody the essence of urban culture and lifestyle. The website was designed with a bold and modern aesthetic, combining strong visuals, dynamic layouts, and an intuitive shopping experience.": "Drippin é um projeto de e-commerce de streetwear que traduz a essência da cultura urbana. O site combina identidade visual marcante, layout dinâmico e uma experiência de compra intuitiva.",
             "Ritmo features an introduction page that highlights the platform’s purpose, advantages, and subscription plans, followed by a login system with predefined credentials that grants access to the main music section.": "Ritmo apresenta a proposta da plataforma, suas vantagens e planos de assinatura. Depois, um sistema de login com credenciais predefinidas libera o acesso à área principal de músicas.",
+            "A hosted institutional portal bringing together multiple subsystems built to serve both the institution and CREDE 01.": "Portal institucional hospedado que reúne diversos subsistemas desenvolvidos para atender tanto à instituição quanto à CREDE 01.",
             "Kauan Cristian - Full Stack": "Kauan Cristian - Desenvolvedor Full Stack",
             "View Live": "Ver projeto",
             "CONTACT": "CONTATO",
@@ -1476,6 +1737,17 @@
 
         updateTheme(localStorage.getItem("portfolioTheme") || "dark");
         updateLanguage(portfolioLanguage);
+        const heroCloudLayer = document.querySelector(".cloud-drift").cloneNode(true);
+        heroCloudLayer.classList.add("cloud-drift--hero");
+        heroCloudLayer.querySelectorAll("linearGradient[id]").forEach((gradient, index) => {
+            const previousId = gradient.id;
+            const nextId = `heroCloudGradient${index + 1}`;
+            gradient.id = nextId;
+            heroCloudLayer.querySelectorAll(`[fill="url(#${previousId})"]`).forEach((shape) => {
+                shape.setAttribute("fill", `url(#${nextId})`);
+            });
+        });
+        document.querySelector("#sec1").prepend(heroCloudLayer);
         const startAtHome = () => {
             if (location.hash) history.replaceState(null, "", location.pathname + location.search);
             window.scrollTo(0, 0);
