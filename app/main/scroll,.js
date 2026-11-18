@@ -14,10 +14,4 @@ if (!window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
     scrollReveal.reveal("#boxCode", { origin: "right", delay: 200, rotate: { x: 0, y: 8, z: 0 } });
     scrollReveal.reveal("#contactMe", { origin: "bottom", delay: 200 });
     scrollReveal.reveal("#pc", { origin: "left", delay: 100 });
-    scrollReveal.reveal("#projectsBox > #carrosselProjects > div", {
-        origin: "right",
-        delay: 150,
-        interval: 170,
-        scale: 0.94
-    });
 }
